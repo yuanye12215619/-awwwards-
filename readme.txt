@@ -1,0 +1,1 @@
+大家好，我是个开源项目的新手，请大家多多指教，我不喜欢hello world   我喜欢 hello Chinese！
