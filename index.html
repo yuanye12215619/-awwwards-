@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="twitter:" content="">
+    <script src="./assets/js/jquery-2.2.4.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_wnwa2zifr4ml5wmi.css">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<link rel="stylesheet" href="./assets/css/index.css">
+<link rel="icon" href="./assets/images/square.png" type="image/x-icon"/>
+    <title>On The Way</title>
+  </head>
+  <style >
+      .block_box{
+      float: left;
+      margin: 3.3%;
+      width:26.7%;
+      height: 170px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 30px;
+    }
+    .block_box view{
+      width:26.7%;
+      height: 60px;
+      line-height: 60px;
+    }
+    .block_box image{
+      width:26.7%;
+      height:100px;
+    }
+  </style>
+  <body>
+    <ul id="example-1">
+      <li v-for="item in items">
+        {{ item.message }}
+      </li>
+    </ul>
+    <div class="container-fluid header">
+      <div class="row header-top">
+        <div class="col-xs-1 ">
+          <span class="menu-lang">ENGLISH</span>
+        </div>
+        <div class="col-xs-10 slogan">The awards of design, creativity and innovation on the internet</div>
+        <div class="col-xs-1">
+          <i class="iconfont icon-tuite"></i>
+          <i class="iconfont icon-facebookf"></i>
+        </div>
+      </div>
+      <div class="row header-main">
+        <div class="col-xs-1" >
+            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+          MENU
+        </div>
+        <div class="col-xs-1 b-l1" >
+          <div class="col-xs-5" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+        </div>
+        <div class="col-xs-10 p0">
+          <div class="col-xs-10 p0">
+            <div class="col-xs-3">
+            </div>
+            <div class="col-xs-6 logo-header">
+              On The Way ®
+            </div>
+            <div class="col-xs-3 login p0">
+              <span>ARE YOU A MEMBER?</span>
+              <strong><a class="open_login" href="/login">Register / log in</a></strong>
+            </div>
+          </div>
+          <div class="col-xs-2  p0">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-10 button-large p0">
+            SUBMIT YOUR SITE!
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="banner">
+      <div class="banner-content">
+        <div class="banner-breadcrumb ">
+          <div class="banner-data">
+            Site of the Day
+            <span>December 24, 2017</span>
+          </div>
+          <div class="banner-share" id="share">
+            <i class="iconfont icon-fenxiang"></i>
+          </div>
+          <ul class="share-list">
+            <div class="banner-share">
+              <i class="iconfont icon-facebookf"></i>
+            </div>
+            <div class="banner-share">
+              <i class="iconfont icon-tuite"></i>
+            </div>
+            <div class="banner-share">
+              <i class="iconfont icon-in"></i>
+            </div>
+            <div class="banner-share">
+              <i class="iconfont icon-google"></i>
+            </div>
+          </ul>
+        </div>
+        <div class="banner-title">
+          "FML"
+        </div>
+        <div class="banner-by">
+          by
+          <strong><a href="#">Gladeye and Highline</a></strong>
+          from
+          <strong>New Zealand</strong>
+          width
+          <strong>7.21</strong>
+        </div>
+        <div class="banner-notes">
+          <ul>
+            <li class="circle-note-progress style-design" data-note="7.14">
+                <div class="circle">
+                    <svg width="84" height="84">
+                        <circle r="38" cy="41" cx="41"></circle>
+                        <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-0 900ms ease forwards;"></circle>
+                    </svg>
+                    <div class="percent">
+                        <span class="int">7</span><span class="dec">.14</span>
+                    </div>
+                </div>
+                <div class="legend">DESIGN</div>
+            </li>
+            <li class="circle-note-progress style-usability" data-note="6.90">
+                <div class="circle">
+                    <svg width="84" height="84">
+                        <circle r="38" cy="41" cx="41"></circle>
+                        <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-1 900ms ease forwards;"></circle>
+                    </svg>
+                    <div class="percent">
+                        <span class="int">6</span><span class="dec">.90</span>
+                    </div>
+                </div>
+                <div class="legend">USABILITY</div>
+            </li>
+            <li class="circle-note-progress style-creativity" data-note="7.69">
+                <div class="circle">
+                    <svg width="84" height="84">
+                        <circle r="38" cy="41" cx="41"></circle>
+                        <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-2 900ms ease forwards;"></circle>
+                    </svg>
+                    <div class="percent">
+                        <span class="int">7</span><span class="dec">.69</span>
+                    </div>
+                </div>
+                <div class="legend">CREATIVITY</div>
+            </li>
+            <li class="circle-note-progress style-content" data-note="7.41">
+                <div class="circle">
+                    <svg width="84" height="84">
+                        <circle r="38" cy="41" cx="41"></circle>
+                        <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-3 900ms ease forwards;"></circle>
+                    </svg>
+                    <div class="percent">
+                        <span class="int">7</span><span class="dec">.41</span>
+                    </div>
+                </div>
+                <div class="legend">CONTENT</div>
+            </li>
+          </ul>
+        </div>
+        <div class="box-bl">
+            <a href="http://highline.huffingtonpost.com/articles/en/poor-millennials/" class="bt-default green-fill" target="_blank" rel="noopener nofollow">Visit Site</a>
+            <a href="/sites/fml" class="bt-default white">Visit Case</a>
+            <a href="#" class="bt-default white js-collect">
+                <i class="iconfont icon-tubiaozhizuomoban"></i>
+                <span class="number">23</span>
+                Collect me
+            </a>
+        </div>
+        <div class="box-br">
+          <i class="iconfont icon-ganlanzhi"></i>
+          <div class="borders">
+            Jury Votes
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="./assets/images/thumb_user_1.jpg" alt="">
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="./assets/images/thumb_user_2.jpg" alt="">
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="./assets/images/thumb_user_3.jpg" alt="">
+              </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="./assets/images/thumb_user_4.jpg" alt="">
+              </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="./assets/images/thumb_user_5.jpg" alt="">
+              </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <img class="banner-min-img" src="./assets/images/christmas.jpg" alt="">
+      </div>
+
+    </div>
+  </body>
+  <script type="text/javascript">
+  $(function(){
+    $("#share").bind("click",function(){
+        console.log(11)
+        // $(this).removeAttr("id");
+        // $(".target").toggle();
+        $(".share-list").toggleClass("active");
+    })
+  })
+  </script>
+  <script type="text/javascript">
+    // $(function(){
+    //   $.ajax({
+    //         type: "GET",
+    //         url: "http://www.ishen365.com/api/getfoodcat",
+    //         data: "",
+    //         success: function(data){
+    //               console.log(JSON.stringify(data));
+    //               // var message = data.data;//后台返回的json数据需要转为对象
+    //               console.log(data.data);
+    //            }
+    //      });
+    // })
+    var example1 = new Vue({
+        el: '#example-1',
+        data: {
+          items: [
+            { message: 'Foo' },
+            { message: 'Bar' }
+          ]
+        }
+      })
+  </script>
+</html>

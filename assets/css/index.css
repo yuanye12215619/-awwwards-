@@ -1,0 +1,393 @@
+body{
+  background-color: #f4f7f6;
+  font-family: "Roboto",sans-serif;
+}
+*{
+  list-style: none;
+}
+.p0{
+  padding: 0;
+}
+.b-l1{
+  border-left:1px solid #E6EAEA;
+}
+.header-top{
+  height:70px;
+  line-height: 70px;
+  text-align: center;
+  border-bottom: 1px solid #E6EAEA;
+}
+.menu-lang{
+font-size: 13px;
+font-weight: 400;
+  display: inline-block;
+    color: #202121 !important;
+    border-bottom: 1px solid rgba(32,33,33,0.5);
+    line-height: normal;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.icon-tuite:hover{
+  cursor: pointer;
+  color: #00B4EB;
+}
+.icon-facebookf:hover{
+  cursor: pointer;
+  color: #5D82D1;
+}
+.icon-fenxiang:hover{
+  cursor: pointer;
+  color: #49c5b6;
+}
+.slogan{
+  font-size: 16px;
+font-weight: 400;
+      font-family: "Roboto",sans-serif;
+          color: #202121;
+}
+.header-main{
+  position: relative;
+
+  height:70px;
+  line-height: 70px;
+  text-align: center;
+  border-bottom: 1px solid #E6EAEA;
+}
+.button-large{
+
+  background-color: #49c5b6;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+.logo-header{
+  font-size: 22px;
+  font-weight: 800;
+  font-family: "Roboto",sans-serif;
+      color: #202121;
+}
+.login{
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.login a{
+      color: #202121;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+      font-weight: 600;
+}
+.login a:hover {
+    color: #64686A;
+}
+.banner{
+  position: relative;
+  left: 0;
+}
+.banner-content{
+  height: 560px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.banner-min-img{
+    width: 100%;
+}
+.banner-breadcrumb{
+    color: #fcfcfc;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    padding:0 70px;
+    line-height: 34px;
+    overflow: hidden;
+    clear: both;
+}
+.banner-data{
+  float: left;
+  font-weight: 600;
+  font-size: 17px;
+}
+.banner-breadcrumb span{
+  font-weight: 100;
+}
+.banner-share{
+  margin-right: 6px;
+  float: right;
+  width: 34px;
+  height:34px;
+  border-radius: 17px;
+  border: 1px solid #fff;
+  text-align: center;
+  transition:all 0.3s ease-in-out;
+}
+
+.banner-share i{
+  font-size: 15px;
+  line-height: 34px;
+}
+.banner-share:hover{
+  border: 1px solid #49c5b6;
+  color: #49c5b6!important;
+  cursor: pointer;
+}
+
+.share-list{
+  float: right;
+  width: inherit;
+  max-width: 40px;
+  min-width: 40px;
+  height: 34px;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all 1.5s ease-in-out;
+}
+/*元素的过度,0.6s之后显示*/
+.share-list.active{
+  opacity: 1;
+  max-width: 300px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  visibility: visible;
+}
+/*相连图标之间显示的时间间隔*/
+.share-list.active .banner-share:nth-child(1){
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+/*相连图标之间隐藏的时间间隔*/
+.share-list .banner-share:nth-child(1) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+/*隐藏的时候旋转*/
+.share-list .banner-share{
+  float: right;
+  margin-right: 6px;
+  opacity: 0;
+  -webkit-transform: scale(0.5) rotate(-45deg);
+  transform: scale(0.5) rotate(-45deg);
+}
+/*显示的时候旋转*/
+.active .banner-share{
+  float: right;
+  margin-right: 6px;
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg);
+}
+
+.banner-title{
+  width:100%;
+  text-align: center;
+  font-size: 35px;
+  color:#fff;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.banner-by{
+  text-transform:uppercase;
+  width:100%;
+  text-align: center;
+  font-size: 14px;
+  color:#fff;
+  margin-bottom: 15px;
+}
+.banner-by strong a{
+  color: #49c5b6;
+}
+.banner-notes{
+  clear: both;
+  overflow: hidden;
+  width:500px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+.banner-notes li{
+  float: left;
+  margin-right: 15px;
+}
+.circle-note-progress .percent {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.circle-note-progress .circle {
+    position: relative;
+}
+.circle-note-progress svg {
+    display: block;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.circle-note-progress circle:nth-child(1) {
+    /* stroke-opacity: 0.3; */
+}
+
+.circle-note-progress circle:nth-child(2) {
+    stroke-dasharray: 238.76104;
+    stroke-dashoffset: 238.76104;
+}
+
+.circle-note-progress.style-design circle {
+    stroke: #df6c4f;
+}
+
+.circle-note-progress circle {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 3;
+}
+.circle-note-progress .percent .int {
+    color:#fff;
+    padding-left: 5px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.circle-note-progress .percent .dec {
+    color:#fff;
+    font-size: 15px;
+    font-weight: 100;
+}
+.circle-note-progress .legend {
+    color:#fff;
+    padding-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.circle-note-progress.style-usability circle {
+    stroke: #ecd06f;
+}
+.circle-note-progress.style-creativity circle {
+    stroke: #3c948b;
+}
+.circle-note-progress.style-content circle {
+    stroke: #1a99aa;
+}
+
+ .box-bl {
+    padding: 0 70px;
+}
+
+ .box-bl {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    z-index: 2;
+}
+.box-site-head .box-content .box-bl .bt-default {
+    min-width: 113px;
+    margin-right: 15px;
+}
+
+
+.bt-default.green-fill {
+  text-decoration: none;
+    border-color: #49c5b6;
+    color: #fff;
+    background-color: #49c5b6;
+    font-weight: 500;
+}
+.bt-default.green-fill:hover{
+  text-decoration: none;
+  border-color: #49c5b6;
+  color: #49c5b6;
+  background-color: rgba(0,0,0,0);
+
+}
+.bt-default {
+    position: relative;
+    display: inline-block;
+    height: 34px;
+    padding: 0 23px;
+    border: 1px solid;
+    border-radius: 50px;
+    line-height: 34px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    color: #A6ABAB;
+    border-color: #DBE0DF;
+}
+.bt-default.white {
+
+    color: #fcfcfc;
+    border-color: #fcfcfc;
+}
+.bt-default.white .ico-svg {
+    fill: #fcfcfc;
+}
+
+.bt-default .ico-svg {
+    top: -1px;
+    height: 12px;
+    vertical-align: middle;
+}
+.bt-default .number {
+    margin: 0 4px 0 2px;
+    font-size: 13px;
+    font-weight: 300;
+}
+.bt-default {
+  text-decoration: none;
+    min-width: 113px;
+    margin-right: 15px;
+}
+.bt-default:hover{
+  text-decoration: none;
+  border-color: #49c5b6;
+  color: #49c5b6;
+}
+.box-br{
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  z-index: 2;
+  /* width: 300px; */
+  height: 34px;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+.box-br .borders{
+  line-height: 34px;
+  color:#fff;
+  padding: 0 23px;
+  border: 1px solid #ffffff;
+  border-left: 0;
+  border-top-right-radius: 17px;
+  border-bottom-right-radius: 17px;
+}
+.box-br .icon-ganlanzhi{
+  font-size: 27px;
+  color: #fff;
+  line-height: 34px;
+  position: absolute;
+  left: 20px;
+}
+.box-br .item img{
+  margin:0  5px;
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+}
+.box-br .item:hover{
+  opacity: 0.55;
+}
