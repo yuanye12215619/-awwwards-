@@ -1,0 +1,108 @@
+.top-tip .tip{
+  width:180px;
+  height:230px;
+  position: relative;
+  top: 25px;
+  background-color: #fff;
+  padding: 30px;
+  margin-left: -80px;
+   margin-top: -8px;
+   z-index: 999;
+}
+
+.bottom-tip .tip{
+  width:180px;
+  height:230px;
+  background-color: #fff;
+  margin-left: -80px;
+  padding: 30px;
+  margin-top: -4px;
+  z-index: 999;
+}
+.item-user .top-tip .tip{
+  margin-left: -72px;
+}
+.item-user .bottom-tip .tip{
+  margin-left: -72px;
+}
+.item-user .top-tip .icon-sanjiao1{
+  margin-left: 10px;
+}
+.item-user .bottom-tip .icon-sanjiao2{
+  margin-left: 10px;
+}
+.top-tip .icon-sanjiao1{
+  font-size:20px!important;
+  margin-left: 3px;
+  color:#fff;
+  position:relative;
+  top:15px;
+}
+.bottom-tip .icon-sanjiao2{
+  font-size:20px!important;
+margin-left: 3px;
+position:relative;
+top:5px;
+color:#fff;
+}
+.item-user .tip{
+  padding: 0;
+}
+.tip .circle{
+  padding:30px;
+  position:relative;
+}
+.tip .circle svg{
+  text-align: center;
+  margin: 0 18px;
+  display: block;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.tip .percent {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.percent .int {
+    color: #020202;
+    padding-left: 5px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.percent .dec{
+  color: #ccc ;
+}
+ .row-user {
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: normal;
+}
+.row-user{
+  color: #020202;
+}
+.text-gray {
+    color: #A6ABAB;
+}
+.top-tip,.bottom-tip{
+  display:none;
+}
+.top-tip{
+  position: absolute;
+  bottom: 100%;
+}
+.js-user{
+  position:relative;
+  top:0;
+  left:0;
+}
+.bottom-tip{
+  position: absolute;
+  top: 30%;
+}

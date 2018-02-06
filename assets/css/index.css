@@ -1,9 +1,22 @@
+body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote，th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0;}
+address,caption, cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul {list-style:none;}
 body{
   background-color: #f4f7f6;
   font-family: "Roboto",sans-serif;
+  font-weight: 300;
+  color: #202121;
 }
 *{
   list-style: none;
+}
+ a:hover{
+   text-decoration: none;
+ }
+ strong {
+    font-weight: 500;
 }
 .p0{
   padding: 0;
@@ -27,6 +40,24 @@ font-weight: 400;
     cursor: pointer;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+}
+.block_box{
+float: left;
+margin: 3.3%;
+width:26.7%;
+height: 170px;
+text-align: center;
+border-radius: 10px;
+font-size: 30px;
+}
+.block_box view{
+width:26.7%;
+height: 60px;
+line-height: 60px;
+}
+.block_box image{
+width:26.7%;
+height:100px;
 }
 .icon-tuite:hover{
   cursor: pointer;
@@ -198,6 +229,10 @@ font-weight: 400;
 }
 .banner-by strong a{
   color: #49c5b6;
+
+}
+.banner-by strong a:hover{
+  color: #fff;
 }
 .banner-notes{
   clear: both;
@@ -367,6 +402,7 @@ font-weight: 400;
   box-sizing: border-box;
 }
 .box-br .borders{
+  cursor: pointer;
   line-height: 34px;
   color:#fff;
   padding: 0 23px;
@@ -374,6 +410,13 @@ font-weight: 400;
   border-left: 0;
   border-top-right-radius: 17px;
   border-bottom-right-radius: 17px;
+}
+.box-br:hover{
+  color: #49c5b6;
+}
+.box-br .borders:hover{
+  color: #49c5b6;
+  border-color: #49c5b6;
 }
 .box-br .icon-ganlanzhi{
   font-size: 27px;
@@ -388,6 +431,207 @@ font-weight: 400;
   height: 34px;
   border-radius: 17px;
 }
-.box-br .item:hover{
+.box-br .item a:hover{
   opacity: 0.55;
+}
+.box-br .item{
+  width:45px;
+}
+.content{
+  padding:0 70px;
+}
+.box-heading.no-flex {
+    display: block;
+}
+
+.box-heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 50px 0;
+    overflow: hidden;
+    font-size: 17px;
+    line-height: 31px;
+}
+.grid {
+    clear: both;
+    margin-left: -35px;
+}
+.grid .col-float-right {
+    float: right;
+}
+.grid .col-left-right {
+      float: left;
+}
+.grid .col-3 {
+    width: 25%;
+    box-sizing: border-box;
+    margin-left: 35px;
+}
+.grid .list-items{
+  clear: both;
+  overflow: hidden;
+  margin-left:-35px;
+}
+.grid .list-items .col-3{
+
+  position: relative;
+    float: left;
+    padding-left: 35px;
+    padding-bottom: 35px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.box-heading .title {
+    padding-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box-heading h1, .box-heading h2 {
+    display: inline;
+    margin: 0;
+}
+.box-photo{
+  width: 100%;
+}
+.box-photo img{
+  width: 100%;
+}
+.list-items .box-info {
+    position: relative;
+    clear: both;
+    background-color: #fcfcfc;
+}
+.box-content{
+  padding:20px;
+}
+.box-content .row{
+  margin: 0;
+}
+.box-content .row {
+    height: 20px;
+    margin-bottom: 12px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.box-content .row:last-child{
+  margin-bottom: 0px;
+}
+.box-content h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 25px;
+}
+.box-content h3 a{
+      color: #202121;
+}
+.box-content strong a{
+  color: #49c5b6;
+text-decoration: none;
+}
+.box-content strong a:hover{
+  color: #202121;
+  text-decoration: none;
+}
+.box-footer{
+  clear: both;
+  padding: 0 20px 20px 20px;
+    font-size: 12px;
+    color: #BDC1C0;
+}
+.list-users li{
+  display:inline-block;
+      margin-right: 6px;
+}
+.box-users-likes img {
+    float: left;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+.box-users-likes img:hover{
+      opacity: 0.55;
+}
+.like-heart{
+  position: relative;
+  top: -4px;
+}
+.like-heart:hover{
+  color:#49c5b6;
+}
+.like-heart .icon-heart{
+  font-size: 27px;
+}
+.list-users li .number{
+  position: absolute;
+  top: 22px;
+  left:22px;
+  font-size: 5px;
+}
+.box-footer a{
+  color: #BDC1C0;
+}
+.list-users li#like{
+position: relative;
+}
+.list-users li#like .collection-tip{
+  display: none;
+  position: absolute;
+  left:-52px;
+  bottom: 50%;
+}
+.list-users li#like .tip{
+  background-color: #49c5b6;
+  width: 140px;
+  height: 35px;
+  margin-left: 0;
+  margin-top: 0;
+  z-index: 999;
+}
+.list-users li#like .tip-msg{
+  color: #fff;
+  line-height: 35px;
+  font-size: 14px;
+  text-align: center;
+}
+.collection-tip  .icon-sanjiao1{
+  top: -10px;
+  position: relative;
+  margin-left: 55px;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0; bottom:100%;}/*初始状态 透明度为0*/
+    100% {opacity: 1; bottom:50%;}/*结束状态 透明度为1*/
+}
+@-webkit-keyframes fade-in {/*针对webkit内核*/
+    0% {opacity: 0;bottom:100%;}
+    100% {opacity: 1;bottom:50%;}
+}
+#wrapper {
+    animation: fade-in;/*动画名称*/
+    animation-duration: 0.5s;/*动画持续时间*/
+    -webkit-animation:fade-in 0.5s;/*针对webkit内核*/
+}
+
+
+.list-user .user-head{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.list-user .user-head img{
+  float: none;
+}
+.list-user .row-user{
+  font-weight: 800;
+}
+
+.list-user .iconfont{
+  font-size: 12px;
 }

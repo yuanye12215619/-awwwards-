@@ -1,256 +1,461 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="twitter:" content="">
     <script src="./assets/js/jquery-2.2.4.min.js"></script>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_wnwa2zifr4ml5wmi.css">
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-<link rel="stylesheet" href="./assets/css/index.css">
-<link rel="icon" href="./assets/images/square.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--iconfnt-->
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_3duezws6earu23xr.css">
+    <!--tip-plugin-->
+    <script src="./assets/js/tip-plugin.js"></script>
+    <!--vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="./assets/css/tip.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="icon" href="./assets/images/square.png" type="image/x-icon" />
     <title>On The Way</title>
-  </head>
-  <style >
-      .block_box{
-      float: left;
-      margin: 3.3%;
-      width:26.7%;
-      height: 170px;
-      text-align: center;
-      border-radius: 10px;
-      font-size: 30px;
-    }
-    .block_box view{
-      width:26.7%;
-      height: 60px;
-      line-height: 60px;
-    }
-    .block_box image{
-      width:26.7%;
-      height:100px;
-    }
-  </style>
-  <body>
-    <ul id="example-1">
-      <li v-for="item in items">
-        {{ item.message }}
-      </li>
-    </ul>
-    <div class="container-fluid header">
-      <div class="row header-top">
-        <div class="col-xs-1 ">
-          <span class="menu-lang">ENGLISH</span>
-        </div>
-        <div class="col-xs-10 slogan">The awards of design, creativity and innovation on the internet</div>
-        <div class="col-xs-1">
-          <i class="iconfont icon-tuite"></i>
-          <i class="iconfont icon-facebookf"></i>
-        </div>
-      </div>
-      <div class="row header-main">
-        <div class="col-xs-1" >
-            <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-          MENU
-        </div>
-        <div class="col-xs-1 b-l1" >
-          <div class="col-xs-5" ><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
-        </div>
-        <div class="col-xs-10 p0">
-          <div class="col-xs-10 p0">
-            <div class="col-xs-3">
-            </div>
-            <div class="col-xs-6 logo-header">
-              On The Way ®
-            </div>
-            <div class="col-xs-3 login p0">
-              <span>ARE YOU A MEMBER?</span>
-              <strong><a class="open_login" href="/login">Register / log in</a></strong>
-            </div>
-          </div>
-          <div class="col-xs-2  p0">
-            <div class="col-xs-2"></div>
-            <div class="col-xs-10 button-large p0">
-            SUBMIT YOUR SITE!
-            </div>
-          </div>
-        </div>
+</head>
 
-      </div>
+<body>
+    <!--header开始-->
+    <div class="container-fluid header">
+        <div class="row header-top">
+            <div class="col-xs-1 ">
+                <span class="menu-lang">ENGLISH</span>
+            </div>
+            <div class="col-xs-10 slogan">The awards of design, creativity and innovation on the internet</div>
+            <div class="col-xs-1">
+                <i class="iconfont icon-tuite"></i>
+                <i class="iconfont icon-facebookf"></i>
+            </div>
+        </div>
+        <div class="row header-main">
+            <div class="col-xs-1">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> MENU
+            </div>
+            <div class="col-xs-1 b-l1">
+                <div class="col-xs-5"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+            </div>
+            <div class="col-xs-10 p0">
+                <div class="col-xs-10 p0">
+                    <div class="col-xs-3">
+                    </div>
+                    <div class="col-xs-6 logo-header">
+                        On The Way ®
+                    </div>
+                    <div class="col-xs-3 login p0">
+                        <span>ARE YOU A MEMBER?</span>
+                        <strong><a class="open_login" href="/login">Register / log in</a></strong>
+                    </div>
+                </div>
+                <div class="col-xs-2  p0">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-10 button-large p0">
+                        SUBMIT YOUR SITE!
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+    <!--banner开始-->
     <div class="banner">
-      <div class="banner-content">
-        <div class="banner-breadcrumb ">
-          <div class="banner-data">
-            Site of the Day
-            <span>December 24, 2017</span>
-          </div>
-          <div class="banner-share" id="share">
-            <i class="iconfont icon-fenxiang"></i>
-          </div>
-          <ul class="share-list">
-            <div class="banner-share">
-              <i class="iconfont icon-facebookf"></i>
+        <div class="banner-content">
+            <div class="banner-breadcrumb ">
+                <div class="banner-data">
+                    Site of the Day
+                    <span>December 24, 2017</span>
+                </div>
+                <div class="banner-share" id="share">
+                    <i class="iconfont icon-fenxiang"></i>
+                </div>
+                <ul class="share-list">
+                    <div class="banner-share">
+                        <i class="iconfont icon-facebookf"></i>
+                    </div>
+                    <div class="banner-share">
+                        <i class="iconfont icon-tuite"></i>
+                    </div>
+                    <div class="banner-share">
+                        <i class="iconfont icon-in"></i>
+                    </div>
+                    <div class="banner-share">
+                        <i class="iconfont icon-google"></i>
+                    </div>
+                </ul>
             </div>
-            <div class="banner-share">
-              <i class="iconfont icon-tuite"></i>
+            <div class="banner-title">
+                "FML"
             </div>
-            <div class="banner-share">
-              <i class="iconfont icon-in"></i>
+            <div class="banner-by">
+                by
+                <strong><a href="#">Gladeye and Highline</a></strong> from
+                <strong>New Zealand</strong> width
+                <strong>7.21</strong>
             </div>
-            <div class="banner-share">
-              <i class="iconfont icon-google"></i>
-            </div>
-          </ul>
-        </div>
-        <div class="banner-title">
-          "FML"
-        </div>
-        <div class="banner-by">
-          by
-          <strong><a href="#">Gladeye and Highline</a></strong>
-          from
-          <strong>New Zealand</strong>
-          width
-          <strong>7.21</strong>
-        </div>
-        <div class="banner-notes">
-          <ul>
-            <li class="circle-note-progress style-design" data-note="7.14">
-                <div class="circle">
-                    <svg width="84" height="84">
+            <div class="banner-notes">
+                <ul>
+                    <li class="circle-note-progress style-design" data-note="7.14">
+                        <div class="circle">
+                            <svg width="84" height="84">
                         <circle r="38" cy="41" cx="41"></circle>
                         <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-0 900ms ease forwards;"></circle>
                     </svg>
-                    <div class="percent">
-                        <span class="int">7</span><span class="dec">.14</span>
-                    </div>
-                </div>
-                <div class="legend">DESIGN</div>
-            </li>
-            <li class="circle-note-progress style-usability" data-note="6.90">
-                <div class="circle">
-                    <svg width="84" height="84">
+                            <div class="percent">
+                                <span class="int">7</span><span class="dec">.14</span>
+                            </div>
+                        </div>
+                        <div class="legend">DESIGN</div>
+                    </li>
+                    <li class="circle-note-progress style-usability" data-note="6.90">
+                        <div class="circle">
+                            <svg width="84" height="84">
                         <circle r="38" cy="41" cx="41"></circle>
                         <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-1 900ms ease forwards;"></circle>
                     </svg>
-                    <div class="percent">
-                        <span class="int">6</span><span class="dec">.90</span>
-                    </div>
-                </div>
-                <div class="legend">USABILITY</div>
-            </li>
-            <li class="circle-note-progress style-creativity" data-note="7.69">
-                <div class="circle">
-                    <svg width="84" height="84">
+                            <div class="percent">
+                                <span class="int">6</span><span class="dec">.90</span>
+                            </div>
+                        </div>
+                        <div class="legend">USABILITY</div>
+                    </li>
+                    <li class="circle-note-progress style-creativity" data-note="7.69">
+                        <div class="circle">
+                            <svg width="84" height="84">
                         <circle r="38" cy="41" cx="41"></circle>
                         <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-2 900ms ease forwards;"></circle>
                     </svg>
-                    <div class="percent">
-                        <span class="int">7</span><span class="dec">.69</span>
-                    </div>
-                </div>
-                <div class="legend">CREATIVITY</div>
-            </li>
-            <li class="circle-note-progress style-content" data-note="7.41">
-                <div class="circle">
-                    <svg width="84" height="84">
+                            <div class="percent">
+                                <span class="int">7</span><span class="dec">.69</span>
+                            </div>
+                        </div>
+                        <div class="legend">CREATIVITY</div>
+                    </li>
+                    <li class="circle-note-progress style-content" data-note="7.41">
+                        <div class="circle">
+                            <svg width="84" height="84">
                         <circle r="38" cy="41" cx="41"></circle>
                         <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-3 900ms ease forwards;"></circle>
                     </svg>
-                    <div class="percent">
-                        <span class="int">7</span><span class="dec">.41</span>
+                            <div class="percent">
+                                <span class="int">7</span><span class="dec">.41</span>
+                            </div>
+                        </div>
+                        <div class="legend">CONTENT</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="box-bl">
+                <a href="" class="bt-default green-fill" target="_blank" rel="noopener nofollow">Visit Site</a>
+                <a href="/sites/fml" class="bt-default white">Visit Case</a>
+                <a href="#" class="bt-default white js-collect">
+                    <i class="iconfont icon-tubiaozhizuomoban"></i>
+                    <span class="number">23</span> Collect me
+                </a>
+            </div>
+            <div class="box-br">
+                <i class="iconfont icon-ganlanzhi"></i>
+                <div class="borders">
+                    Jury Votes
+                </div>
+                <div class="item item-user">
+                    <div class="top-tip" style="display:block" >
+                        <div class="tip">
+                            <div class="circle">
+                                <svg width="84" height="84">
+                                      <circle r="38" cy="41" cx="41" fill="#fff" stroke="#df6c4f" stroke-width="3"></circle>
+                                </svg>
+                                <div class="percent">
+                                    <span class="int">7</span><span class="dec">.14</span>
+                                </div>
+                            </div>
+                            <div class="row-user">
+                                <strong>Marie Benoist</strong>
+                            </div>
+                            <div class="row-user">
+                                <span class="text-gray">Netherlands</span>
+                            </div>
+                        </div>
+                        <i class="iconfont icon-sanjiao1"></i>
+                    </div>
+                    <a href="javascript:;">
+                        <img src="./assets/images/thumb_user_1.jpg" alt="">
+                    </a>
+                    <div class="bottom-tip" style="display:block">
+                        <i class="iconfont icon-sanjiao2"></i>
+                        <div class="tip">
+                            <div class="circle">
+                                <svg width="84" height="84">
+                                  <circle r="38" cy="41" cx="41" fill="#fff" stroke="#df6c4f" stroke-width="3"></circle>
+                                </svg>
+                                <div class="percent">
+                                    <span class="int">7</span><span class="dec">.14</span>
+                                </div>
+                            </div>
+                            <div class="row-user">
+                                <strong>Marie Benoist</strong>
+                            </div>
+                            <div class="row-user">
+                                <span class="text-gray">Netherlands</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="legend">CONTENT</div>
-            </li>
-          </ul>
+                <div class="item item-user">
+                    <a href="#">
+                        <img src="./assets/images/thumb_user_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item item-user">
+                    <a href="#">
+                        <img src="./assets/images/thumb_user_3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item item-user">
+                    <a href="#">
+                        <img src="./assets/images/thumb_user_4.jpg" alt="">
+                    </a>
+                </div>
+                <div class="item item-user">
+                    <a href="#">
+                        <img src="./assets/images/thumb_user_5.jpg" alt="">
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="box-bl">
-            <a href="http://highline.huffingtonpost.com/articles/en/poor-millennials/" class="bt-default green-fill" target="_blank" rel="noopener nofollow">Visit Site</a>
-            <a href="/sites/fml" class="bt-default white">Visit Case</a>
-            <a href="#" class="bt-default white js-collect">
-                <i class="iconfont icon-tubiaozhizuomoban"></i>
-                <span class="number">23</span>
-                Collect me
-            </a>
+        <div class="">
+            <img class="banner-min-img" src="./assets/images/christmas.jpg" alt="">
         </div>
-        <div class="box-br">
-          <i class="iconfont icon-ganlanzhi"></i>
-          <div class="borders">
-            Jury Votes
-          </div>
-          <div class="item">
-            <a href="#">
-              <img src="./assets/images/thumb_user_1.jpg" alt="">
-            </a>
-          </div>
-          <div class="item">
-            <a href="#">
-              <img src="./assets/images/thumb_user_2.jpg" alt="">
-            </a>
-          </div>
-          <div class="item">
-            <a href="#">
-              <img src="./assets/images/thumb_user_3.jpg" alt="">
-              </a>
-          </div>
-          <div class="item">
-            <a href="#">
-              <img src="./assets/images/thumb_user_4.jpg" alt="">
-              </a>
-          </div>
-          <div class="item">
-            <a href="#">
-              <img src="./assets/images/thumb_user_5.jpg" alt="">
-              </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="">
-        <img class="banner-min-img" src="./assets/images/christmas.jpg" alt="">
-      </div>
-
     </div>
-  </body>
-  <script type="text/javascript">
-  $(function(){
-    $("#share").bind("click",function(){
-        console.log(11)
-        // $(this).removeAttr("id");
-        // $(".target").toggle();
-        $(".share-list").toggleClass("active");
+    <!--content开始-->
+    <div class="content">
+        <div class="box-heading no-flex">
+            <div class="grid one-row">
+                <div class="col-3 col-left-right">
+                    <div class="box-left">
+                        <h2 class="title"><a href="/awards-of-the-day/">Sites of the day</a></h2>
+                        <span>Previous Winners</span>
+                    </div>
+                </div>
+                <div class="col-3 col-float-right">
+                    <div class="box-sponsorship">
+                        <h2 class="title">Mobile Excellence</h2> recognized by Google
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <ul class="list-items">
+                <li class="col-3">
+                    <div class="box-photo">
+                        <img src="./assets/images/progect.jpg" alt="">
+                    </div>
+                    <div class="box-info">
+                        <div class="box-content">
+                            <div class="row">
+                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
+                            </div>
+                            <div class="row">
+                                by
+                                <strong>
+                      <a href="/readymag/">ReadyMag</a>
+                    </strong> from U.S.A.
+                            </div>
+                            <div class="row">
+                                January 10, 2018
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <div class="box-left">
+                                <div class="box-users-likes">
+                                    <ul class="list-users">
+                                        <li class="list-user">
+                                            <div class="item js-user">
+                                                <div class="top-tip" >
+                                                    <div class="tip">
+                                                        <div class="user-head">
+                                                            <img src="./assets/images/thumb_default.jpg" alt="">
+                                                        </div>
+                                                        <div class="row-user">
+                                                            Justin Greene
+                                                        </div>
+                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
+                                                            <span class="text-gray">Netherlands</span>
+                                                        </div>
+                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
+                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
+                                                        </div>
+                                                    </div>
+                                                    <i class="iconfont icon-sanjiao1"></i>
+                                                </div>
+                                                <a href="/tslasho/">
+                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
+                                                </a>
+                                                <div class="bottom-tip" >
+                                                    <i class="iconfont icon-sanjiao2"></i>
+                                                    <div class="tip">
+                                                        <div class="user-head">
+                                                            <img src="./assets/images/thumb_default.jpg" alt="">
+                                                        </div>
+                                                        <div class="row-user">
+                                                            <strong>Marie Benoist</strong>
+                                                        </div>
+                                                        <div class="row-user">
+                                                            <span class="text-gray">Netherlands</span>
+                                                        </div>
+                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
+                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item js-user">
+                                                <a href="/gabyferman/">
+                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="gabyferman" class="lazy lazy-loaded">
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item js-user">
+                                                <a href="/pollur/">
+                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="pollur" class="lazy lazy-loaded">
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item js-user">
+                                                <a href="/jwaldmann/">
+                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="jwaldmann" class="lazy lazy-loaded">
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li id="like" class="like">
+                                            <div class="collection-tip" id="wrapper">
+                                                <div class="tip">
+                                                    <div class="tip-msg">
+                                                        Add to collections!
+                                                    </div>
+                                                </div>
+                                                <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
+                                            </div>
+                                            <div class="like-heart">
+                                                <a href="/jwaldmann/">
+                                                    <i class="iconfont icon-heart"></i>
+                                                    <div class="number">45</div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="box-right">
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function() {
+        // //canvas画三角
+        // var bg = document.getElementsByClassName("triangle");
+        // var i;
+        // for (i = 0; i < bg.length; i++) {
+        //     var ctx = bg[i].getContext('2d');
+        //     console.log(i);
+        //     ctx.beginPath();
+        //     var height = 12 * Math.sin(Math.PI / 3); //计算等边三角形的高
+        //     ctx.moveTo(6, 0); //从A（100,0）开始
+        //     ctx.lineTo(0, height); //从A(100,0)开始，画到B (0,173)结束
+        //     ctx.lineTo(12, height); //B(0,173)-C(200,173)
+        //     if (i < 2) {
+        //         ctx.fillStyle = '#fff'; //以纯色绿色填充
+        //     } else {
+        //         ctx.fillStyle = '#49c5b6'; //以纯色绿色填充
+        //     }
+        //     ctx.fill(); //闭合形状并且以填充方式绘制出来
+        // }
+
+
+        //分享功能
+        $("#share").bind("click", function() {
+
+                $(".share-list").toggleClass("active");
+            })
+            //banner-tip
+        $(".item-user").hover(function() {
+            var a = $(".item-user").offset().top + 45 - $(document).scrollTop() //距离窗口可视区域顶部
+            var b = $(window).height(); //可视区域窗口的高度
+            var c = b - a; //底部
+            if (c > 230) {
+                $(this).children(".bottom-tip").show();
+            } else {
+                if (a > 230) {
+                    $(this).children(".top-tip").show();
+                }
+            }
+        }, function() {
+            $(this).children(".bottom-tip,.top-tip").hide();
+        });
+        //collection改变颜色
+        $(".like-heart a").hover(function() {
+            $(this).children(".icon-heart").css("color", "#49c5b6");
+            $(this).children(".number").css("color", "#49c5b6");
+        }, function() {
+            $(this).children(".icon-heart").css("color", "#BDC1C0");
+            $(this).children(".number").css("color", "#BDC1C0");
+        });
+
+        //collection-tip
+        $(".like").hover(function() {
+                $(this).children(".collection-tip").show();
+            }, function() {
+                $(this).children(".collection-tip").hide();
+            })
+        //borders
+        $(".borders").hover(function() {
+                $(".icon-ganlanzhi").css("color", "#49c5b6");
+            }, function() {
+              $(".icon-ganlanzhi").css("color", "#BDC1C0");
+            })
+        //user-tip
+        $(".js-user").hover(function(){
+          var a=$(".js-user").offset().top+45-$(document).scrollTop()//距离窗口可视区域顶部
+          var b=$(window).height() ;//可视区域窗口的高度
+          var c=b-a;//底部
+          if(c>230){
+            $(this).children(".bottom-tip").show();
+          }else{
+            if(a>230){
+              $(this).children(".top-tip").show();
+            }
+          }
+        },function(){
+            $(this).children(".bottom-tip,.top-tip").hide();
+        });
+            //tip插件
+        $(".item-user").bind("click", function() {
+            $(this).children(".none").show();
+            $('#myDiv').tip({
+                background: '#fff'
+                    // circlecolor:"#ccc";
+            });
+        })
+
     })
-  })
-  </script>
-  <script type="text/javascript">
-    // $(function(){
-    //   $.ajax({
-    //         type: "GET",
-    //         url: "http://www.ishen365.com/api/getfoodcat",
-    //         data: "",
-    //         success: function(data){
-    //               console.log(JSON.stringify(data));
-    //               // var message = data.data;//后台返回的json数据需要转为对象
-    //               console.log(data.data);
-    //            }
-    //      });
-    // })
-    var example1 = new Vue({
-        el: '#example-1',
-        data: {
-          items: [
-            { message: 'Foo' },
-            { message: 'Bar' }
-          ]
-        }
-      })
-  </script>
+</script>
+
 </html>
