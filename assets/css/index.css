@@ -21,6 +21,9 @@ body{
 .p0{
   padding: 0;
 }
+.ml35{
+  margin-left: 0px!important;
+}
 .b-l1{
   border-left:1px solid #E6EAEA;
 }
@@ -479,6 +482,7 @@ font-weight: 400;
     float: left;
     padding-left: 35px;
     padding-bottom: 35px;
+    margin-left: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -494,9 +498,39 @@ font-weight: 400;
 }
 .box-photo{
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 .box-photo img{
   width: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+.enlarge{
+   transform: scale(1.07);
+}
+.narrow{
+   transform: scale(1);
+}
+.mask{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#000;
+  opacity:0.3;
+}
+.icon-fenxiang2{
+  color:#fff;
+  cursor:pointer;
+  opacity:1;
+  position: absolute;
+  bottom: 10px;
+  right:10px;
+  font-size:36px;
+}
+.icon-fenxiang2:hover{
+  color:#ddd;
 }
 .list-items .box-info {
     position: relative;
