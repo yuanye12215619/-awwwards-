@@ -7,7 +7,7 @@
   padding: 30px;
   margin-left: -80px;
    margin-top: -8px;
-   z-index: 999;
+   z-index: 9999;
 }
 
 .bottom-tip .tip{
@@ -17,7 +17,7 @@
   margin-left: -80px;
   padding: 30px;
   margin-top: -4px;
-  z-index: 999;
+  z-index: 9999;
 }
 .item-user .top-tip .tip{
   margin-left: -72px;
@@ -96,6 +96,7 @@ color:#fff;
 .top-tip{
   position: absolute;
   bottom: 100%;
+  z-index: 9999;
 }
 .js-user{
   position:relative;
@@ -104,5 +105,6 @@ color:#fff;
 }
 .bottom-tip{
   position: absolute;
+  z-index:99999;
   top: 30%;
 }

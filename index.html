@@ -16,7 +16,7 @@
     <!--tip-plugin-->
     <script src="./assets/js/tip-plugin.js"></script>
     <!--vue-->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <link rel="stylesheet" href="./assets/css/tip.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="icon" href="./assets/images/square.png" type="image/x-icon" />
@@ -252,366 +252,29 @@
             </div>
         </div>
         <div class="grid">
-            <ul class="list-items ml35">
-                <li class="col-3 ">
+            <ul class="list-items ml35" id="example-1">
+                <li class="col-3 " v-for="item in items">
                     <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
-                          <i class="iconfont icon-fenxiang2"></i>
-                        </div>
-                    </div>
-                    <div class="box-info">
-                        <div class="box-content">
-                            <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
-                            </div>
-                            <div class="row">
-                                by
-                                <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
-                            </div>
-                            <div class="row">
-                                January 10, 2018
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <div class="box-left">
-                                <div class="box-users-likes">
-                                    <ul class="list-users">
-                                        <li class="list-user">
-                                            <div class="item js-user">
-                                                <div class="top-tip" >
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            Justin Greene
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                    <i class="iconfont icon-sanjiao1"></i>
-                                                </div>
-                                                <a href="/tslasho/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
-                                                </a>
-                                                <div class="bottom-tip" >
-                                                    <i class="iconfont icon-sanjiao2"></i>
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <strong>Marie Benoist</strong>
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/gabyferman/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="gabyferman" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/pollur/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="pollur" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/jwaldmann/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="jwaldmann" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
-                                                <div class="tip">
-                                                    <div class="tip-msg">
-                                                        Add to collections!
-                                                    </div>
-                                                </div>
-                                                <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                            </div>
-                                            <div class="like-heart">
-                                                <a href="/jwaldmann/">
-                                                    <i class="iconfont icon-heart"></i>
-                                                    <div class="number">45</div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="box-right">
+                        <img :src="item.img" alt="" class="narrow">
 
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-3">
-                    <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
+                        <div class="mask" style="display:none">
                           <i class="iconfont icon-fenxiang2"></i>
                         </div>
                     </div>
+                    <div class="ribbon ribbon-mobile-week" v-if="item.ribbon"></div>
                     <div class="box-info">
                         <div class="box-content">
                             <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
+                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">{{ item.message }}</a></h3>
                             </div>
                             <div class="row">
                                 by
                                 <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
+                                  <a href="/readymag/">{{ item.name }}</a>
+                                </strong> {{ item.country }}
                             </div>
                             <div class="row">
-                                January 10, 2018
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <div class="box-left">
-                                <div class="box-users-likes">
-                                    <ul class="list-users">
-                                        <li class="list-user">
-                                            <div class="item js-user">
-                                                <div class="top-tip" >
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            Justin Greene
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                    <i class="iconfont icon-sanjiao1"></i>
-                                                </div>
-                                                <a href="/tslasho/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
-                                                </a>
-                                                <div class="bottom-tip" >
-                                                    <i class="iconfont icon-sanjiao2"></i>
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <strong>Marie Benoist</strong>
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/gabyferman/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="gabyferman" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/pollur/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="pollur" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/jwaldmann/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="jwaldmann" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
-                                                <div class="tip">
-                                                    <div class="tip-msg">
-                                                        Add to collections!
-                                                    </div>
-                                                </div>
-                                                <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                            </div>
-                                            <div class="like-heart">
-                                                <a href="/jwaldmann/">
-                                                    <i class="iconfont icon-heart"></i>
-                                                    <div class="number">45</div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="box-right">
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-3">
-                    <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
-                          <i class="iconfont icon-fenxiang2"></i>
-                        </div>
-                    </div>
-                    <div class="box-info">
-                        <div class="box-content">
-                            <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
-                            </div>
-                            <div class="row">
-                                by
-                                <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
-                            </div>
-                            <div class="row">
-                                January 10, 2018
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <div class="box-left">
-                                <div class="box-users-likes">
-                                    <ul class="list-users">
-                                        <li class="list-user">
-                                            <div class="item js-user">
-                                                <div class="top-tip" >
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            Justin Greene
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                    <i class="iconfont icon-sanjiao1"></i>
-                                                </div>
-                                                <a href="/tslasho/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
-                                                </a>
-                                                <div class="bottom-tip" >
-                                                    <i class="iconfont icon-sanjiao2"></i>
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <strong>Marie Benoist</strong>
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/gabyferman/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="gabyferman" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/pollur/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="pollur" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/jwaldmann/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="jwaldmann" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
-                                                <div class="tip">
-                                                    <div class="tip-msg">
-                                                        Add to collections!
-                                                    </div>
-                                                </div>
-                                                <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                            </div>
-                                            <div class="like-heart">
-                                                <a href="/jwaldmann/">
-                                                    <i class="iconfont icon-heart"></i>
-                                                    <div class="number">45</div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="box-right">
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-3">
-                    <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
-                          <i class="iconfont icon-fenxiang2"></i>
-                        </div>
-                    </div>
-                    <div class="box-info">
-                        <div class="box-content">
-                            <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
-                            </div>
-                            <div class="row">
-                                by
-                                <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
-                            </div>
-                            <div class="row">
-                                January 10, 2018
+                                 {{ item.date }}
                             </div>
                         </div>
                         <div class="box-footer">
@@ -706,366 +369,27 @@
                     </div>
                 </li>
             </ul>
-            <ul class="list-items ml35">
-                <li class="col-3 ">
+            <ul class="list-items ml35" id="example-2">
+                <li class="col-3 " v-for="item in items">
                     <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
+                        <img :src="item.img" alt="" class="narrow">
+                        <div class="mask" style="display:none">
                           <i class="iconfont icon-fenxiang2"></i>
                         </div>
                     </div>
                     <div class="box-info">
                         <div class="box-content">
                             <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
+                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">{{ item.message }}</a></h3>
                             </div>
                             <div class="row">
                                 by
                                 <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
+                      <a href="/readymag/">{{ item.name }}</a>
+                    </strong> {{ item.country }}
                             </div>
                             <div class="row">
-                                January 10, 2018
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <div class="box-left">
-                                <div class="box-users-likes">
-                                    <ul class="list-users">
-                                        <li class="list-user">
-                                            <div class="item js-user">
-                                                <div class="top-tip" >
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            Justin Greene
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                    <i class="iconfont icon-sanjiao1"></i>
-                                                </div>
-                                                <a href="/tslasho/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
-                                                </a>
-                                                <div class="bottom-tip" >
-                                                    <i class="iconfont icon-sanjiao2"></i>
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <strong>Marie Benoist</strong>
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/gabyferman/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="gabyferman" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/pollur/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="pollur" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/jwaldmann/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="jwaldmann" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
-                                                <div class="tip">
-                                                    <div class="tip-msg">
-                                                        Add to collections!
-                                                    </div>
-                                                </div>
-                                                <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                            </div>
-                                            <div class="like-heart">
-                                                <a href="/jwaldmann/">
-                                                    <i class="iconfont icon-heart"></i>
-                                                    <div class="number">45</div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="box-right">
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-3">
-                    <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
-                          <i class="iconfont icon-fenxiang2"></i>
-                        </div>
-                    </div>
-                    <div class="box-info">
-                        <div class="box-content">
-                            <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
-                            </div>
-                            <div class="row">
-                                by
-                                <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
-                            </div>
-                            <div class="row">
-                                January 10, 2018
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <div class="box-left">
-                                <div class="box-users-likes">
-                                    <ul class="list-users">
-                                        <li class="list-user">
-                                            <div class="item js-user">
-                                                <div class="top-tip" >
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            Justin Greene
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                    <i class="iconfont icon-sanjiao1"></i>
-                                                </div>
-                                                <a href="/tslasho/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
-                                                </a>
-                                                <div class="bottom-tip" >
-                                                    <i class="iconfont icon-sanjiao2"></i>
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <strong>Marie Benoist</strong>
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/gabyferman/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="gabyferman" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/pollur/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="pollur" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/jwaldmann/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="jwaldmann" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
-                                                <div class="tip">
-                                                    <div class="tip-msg">
-                                                        Add to collections!
-                                                    </div>
-                                                </div>
-                                                <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                            </div>
-                                            <div class="like-heart">
-                                                <a href="/jwaldmann/">
-                                                    <i class="iconfont icon-heart"></i>
-                                                    <div class="number">45</div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="box-right">
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-3">
-                    <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
-                          <i class="iconfont icon-fenxiang2"></i>
-                        </div>
-                    </div>
-                    <div class="box-info">
-                        <div class="box-content">
-                            <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
-                            </div>
-                            <div class="row">
-                                by
-                                <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
-                            </div>
-                            <div class="row">
-                                January 10, 2018
-                            </div>
-                        </div>
-                        <div class="box-footer">
-                            <div class="box-left">
-                                <div class="box-users-likes">
-                                    <ul class="list-users">
-                                        <li class="list-user">
-                                            <div class="item js-user">
-                                                <div class="top-tip" >
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            Justin Greene
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                    <i class="iconfont icon-sanjiao1"></i>
-                                                </div>
-                                                <a href="/tslasho/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
-                                                </a>
-                                                <div class="bottom-tip" >
-                                                    <i class="iconfont icon-sanjiao2"></i>
-                                                    <div class="tip">
-                                                        <div class="user-head">
-                                                            <img src="./assets/images/thumb_default.jpg" alt="">
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <strong>Marie Benoist</strong>
-                                                        </div>
-                                                        <div class="row-user">
-                                                            <span class="text-gray">Netherlands</span>
-                                                        </div>
-                                                        <div class="row-user" style="color: rgb(189, 193, 192);">
-                                                            25&nbsp;&nbsp;<i class="iconfont icon-tubiaozhizuomoban"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/gabyferman/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="gabyferman" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/pollur/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="pollur" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item js-user">
-                                                <a href="/jwaldmann/">
-                                                    <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="jwaldmann" class="lazy lazy-loaded">
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
-                                                <div class="tip">
-                                                    <div class="tip-msg">
-                                                        Add to collections!
-                                                    </div>
-                                                </div>
-                                                <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                            </div>
-                                            <div class="like-heart">
-                                                <a href="/jwaldmann/">
-                                                    <i class="iconfont icon-heart"></i>
-                                                    <div class="number">45</div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="box-right">
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-3">
-                    <div class="box-photo">
-                        <img src="./assets/images/progect.jpg" alt="">
-                        <div class="mask" style="display:block">
-                          <i class="iconfont icon-fenxiang2"></i>
-                        </div>
-                    </div>
-                    <div class="box-info">
-                        <div class="box-content">
-                            <div class="row">
-                                <h3><a href="/sites/dieter-rams-10-principles-for-good-design" class="">Dieter Rams:  10 Principles for  Good Design</a></h3>
-                            </div>
-                            <div class="row">
-                                by
-                                <strong>
-                      <a href="/readymag/">ReadyMag</a>
-                    </strong> from U.S.A.
-                            </div>
-                            <div class="row">
-                                January 10, 2018
+                                 {{ item.date }}
                             </div>
                         </div>
                         <div class="box-footer">
@@ -1160,7 +484,7 @@
                     </div>
                 </li>
             </ul>
-        
+
         </div>
     </div>
 </body>
@@ -1185,8 +509,70 @@
         //     }
         //     ctx.fill(); //闭合形状并且以填充方式绘制出来
         // }
-
-
+        //Vue渲染模板，注意要放在前面！
+        var example1 = new Vue({
+          el: '#example-1',
+          data: {
+            items: [{
+              message: 'Dieter Rams:  10 Principles for  Good Design',
+              name: 'ReadyMag',
+              country:" from U.S.A." ,
+              date:"January 10, 2018",
+              img:"./assets/images/project.jpg",
+            },
+              {
+                message: 'Dieter Rams:  10 Principles for  Good Design',
+                name: 'ReadyMag',
+                country:" from U.S.A." ,
+                date:"January 10, 2018",
+                img:"./assets/images/project4.png",
+              },{
+                  message: 'Dieter Rams:  10 Principles for  Good Design',
+                  name: 'ReadyMag',
+                  country:" from U.S.A." ,
+                  date:"January 10, 2018",
+                  img:"./assets/images/project2.jpg",
+                },{
+                    message: 'Dieter Rams:  10 Principles for  Good Design',
+                    name: 'ReadyMag',
+                    country:" from U.S.A." ,
+                    date:"January 10, 2018",
+                    img:"./assets/images/project3.jpg",
+                    ribbon:true
+                  },]
+          }
+        },)
+        var example2 = new Vue({
+          el: '#example-2',
+          data: {
+            items: [{
+              message: 'Dieter Rams:  10 Principles for  Good Design',
+              name: 'ReadyMag',
+              country:" from U.S.A." ,
+              date:"January 10, 2018",
+              img:"./assets/images/project.jpg",
+            },
+              {
+                message: 'Dieter Rams:  10 Principles for  Good Design',
+                name: 'ReadyMag',
+                country:" from U.S.A." ,
+                date:"January 10, 2018",
+                img:"./assets/images/project4.png",
+              },{
+                  message: 'Dieter Rams:  10 Principles for  Good Design',
+                  name: 'ReadyMag',
+                  country:" from U.S.A." ,
+                  date:"January 10, 2018",
+                  img:"./assets/images/project2.jpg",
+                },{
+                    message: 'Dieter Rams:  10 Principles for  Good Design',
+                    name: 'ReadyMag',
+                    country:" from U.S.A." ,
+                    date:"January 10, 2018",
+                    img:"./assets/images/project3.jpg",
+                  },]
+          }
+        },)
         //分享功能
         $("#share").bind("click", function() {
 
@@ -1262,7 +648,9 @@
                 $(this).children("img").removeClass("enlarge");
                 $(this).children(".mask").hide();
             })
+
     })
+
 </script>
 
 </html>

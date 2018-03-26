@@ -473,12 +473,14 @@ font-weight: 400;
 }
 .grid .list-items{
   clear: both;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-left:-35px;
 }
 .grid .list-items .col-3{
 
   position: relative;
+  top:0;
+
     float: left;
     padding-left: 35px;
     padding-bottom: 35px;
@@ -491,7 +493,9 @@ font-weight: 400;
     font-size: 18px;
     font-weight: bold;
 }
-
+.box-heading .title a{
+  color: #202121;
+}
 .box-heading h1, .box-heading h2 {
     display: inline;
     margin: 0;
@@ -504,6 +508,20 @@ font-weight: 400;
 .box-photo img{
   width: 100%;
   -webkit-transition: all 0.3s ease-in-out;
+}
+.ribbon.ribbon-mobile-week {
+    background-image: url(https://assets.awwwards.com/bundles/tvweb/images/ribbons/mobile_week_white_left.png);
+}
+.ribbon {
+  position: absolute;
+      top: 25%;
+      left: 23px;
+      width: 90px;
+      height: 151px;
+      background-size: 100% 100%;
+      z-index: 5;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
 }
 .enlarge{
    transform: scale(1.07);
