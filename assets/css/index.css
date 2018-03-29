@@ -21,6 +21,10 @@ body{
 .p0{
   padding: 0;
 }
+.cl{
+  clear: both;
+  overflow: hidden;
+}
 .ml35{
   margin-left: 0px!important;
 }
@@ -82,7 +86,7 @@ font-weight: 400;
 }
 .header-main{
   position: relative;
-
+background-color: #f4f7f6;
   height:70px;
   line-height: 70px;
   text-align: center;
@@ -355,7 +359,7 @@ font-weight: 400;
     border: 1px solid;
     border-radius: 50px;
     line-height: 34px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     text-align: center;
     cursor: pointer;
@@ -392,6 +396,7 @@ font-weight: 400;
   text-decoration: none;
   border-color: #49c5b6;
   color: #49c5b6;
+
 }
 .box-br{
   display: flex;
@@ -457,9 +462,11 @@ font-weight: 400;
     line-height: 31px;
 }
 .grid {
-    clear: both;
     margin-left: -35px;
+    *+height:1%;
 }
+.grid:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
 .grid .col-float-right {
     float: right;
 }
@@ -590,10 +597,32 @@ text-decoration: none;
   text-decoration: none;
 }
 .box-footer{
-  clear: both;
+  /* clear: both; */
   padding: 0 20px 20px 20px;
     font-size: 12px;
     color: #BDC1C0;
+  *+height:1%;
+}
+.box-footer:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.box-left{
+  width: 75%;
+  float: left;
+}
+.box-right{
+  width: 25%;
+  float: right;
+}
+.box-right .list-users{
+  text-align: right;
+}
+.medal .icon-medal{
+  color: rgb(189, 193, 192);
+      font-size:35px;
+      float: right;
+      margin-top: -8px;
+}
+.medal .icon-medal:hover{
+  color: #49c5b6;
 }
 .list-users li{
   display:inline-block;
@@ -628,16 +657,22 @@ text-decoration: none;
 .box-footer a{
   color: #BDC1C0;
 }
-.list-users li#like{
+.list-users li{
 position: relative;
 }
-.list-users li#like .collection-tip{
+.list-users  .collection-tip{
   display: none;
   position: absolute;
   left:-52px;
   bottom: 50%;
 }
-.list-users li#like .tip{
+.box-right .list-users  .collection-tip{
+  display: none;
+  position: absolute;
+  left:-58px;
+  bottom: 50%;
+}
+.list-users .collection-tip .tip{
   background-color: #49c5b6;
   width: 140px;
   height: 35px;
@@ -645,7 +680,8 @@ position: relative;
   margin-top: 0;
   z-index: 999;
 }
-.list-users li#like .tip-msg{
+
+.list-users .tip-msg{
   color: #fff;
   line-height: 35px;
   font-size: 14px;
@@ -653,10 +689,16 @@ position: relative;
 }
 .collection-tip  .icon-sanjiao1{
   top: -10px;
+
   position: relative;
   margin-left: 55px;
 }
-
+.box-right .collection-tip  .icon-sanjiao1{
+right: 40%;
+}
+.box-right .list-users li {
+  margin: 0;
+}
 @keyframes fade-in {
     0% {opacity: 0; bottom:100%;}/*初始状态 透明度为0*/
     100% {opacity: 1; bottom:50%;}/*结束状态 透明度为1*/
@@ -687,3 +729,161 @@ position: relative;
 .list-user .iconfont{
   font-size: 12px;
 }
+
+.box-photo .hover-item.center {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.box-photo .hover-item.center :hover {
+  color: #49c5b6;
+  border-color: 1px solid #49c5b6;
+}
+.box-photo .hover-item {
+    position: absolute;
+    right: 20px;
+    z-index: 3;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+.bt-default.white-fill {
+    border-color: #fcfcfc;
+    color: #202121;
+    background-color: #fcfcfc;
+    font-weight: 500;
+}
+.bt-default.white-fill:hover{
+  color: #49c5b6;
+  border-color:#49c5b6;
+  background-color: rgba(0,0,0,0);
+}
+.none{
+  display:none;
+}
+.loadmore{
+  text-align: center;
+  margin: auto;
+  width: 190px;
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  border-radius: 5px;
+  color: #BDC1C0;
+    background-color: #fcfcfc;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+.loadmore:hover{
+  background-color: #fff;
+  color: #BDC0C0;
+}
+#footer {
+    position: relative;
+    background-color: #fcfcfc;
+    /* z-index: -1; */
+}
+#footer .box-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 70px 0 100px 0;
+}
+#footer .slogan {
+    width: 520px;
+    max-width: 100%;
+}
+
+#footer .headline {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 35px;
+    margin-bottom: 35px;
+}
+
+#footer a{
+   color: #202121;
+   -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#footer p{
+  margin-bottom: 25px;
+line-height: 170%;
+}
+.menu-footer {
+    clear: both;
+    width: 100%;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.menu-footer li {
+    float: left;
+    margin-right: 20px;
+    font-weight: bold;
+    line-height: 24px;
+}
+.inner{
+  max-width: 100%;
+    padding-left: 70px;
+    padding-right: 70px;
+
+max-width: 1773px;
+margin: 0 auto;
+clear: both;
+}
+#footer .headline .ico-svg {
+    top: -2px;
+    height: 22px;
+    margin: 0 8px;
+    vertical-align: middle;
+}
+
+.ico-svg {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: 14px;
+    fill: #202121;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+#footer .headline a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.menu-footer .count1{
+  font-weight: 400;
+  margin-left: -18px;
+  font-size: 12px;
+  background-color: #FEF7C1;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  float: left;
+}
+.menu-footer .count2{
+  font-weight: 400;
+  margin-left: -18px;
+  font-size: 12px;
+  background-color: #BCF7E3;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  float: left;
+}
+#footer .box-right{
+  width: 30%;
+}
+.nav_fixed{position:fixed;top:0;    width: 100%;
+    z-index: 9999;}

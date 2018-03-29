@@ -12,7 +12,7 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--iconfnt-->
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_d2th9l71kyo2bj4i.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_jd8wjg06m82maemi.css">
     <!--tip-plugin-->
     <script src="./assets/js/tip-plugin.js"></script>
     <!--vue-->
@@ -25,8 +25,8 @@
 
 <body>
     <!--header开始-->
-    <div class="container-fluid header">
-        <div class="row header-top">
+    <div class="container-fluid header"  >
+        <div class="row header-top" >
             <div class="col-xs-1 ">
                 <span class="menu-lang">ENGLISH</span>
             </div>
@@ -36,7 +36,7 @@
                 <i class="iconfont icon-facebookf"></i>
             </div>
         </div>
-        <div class="row header-main">
+        <div class="row header-main" id="nav">
             <div class="col-xs-1">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> MENU
             </div>
@@ -239,7 +239,7 @@
         <div class="box-heading no-flex">
             <div class="grid one-row">
                 <div class="col-3 col-left-right">
-                    <div class="box-left">
+                    <div >
                         <h2 class="title"><a href="/awards-of-the-day/">Sites of the day</a></h2>
                         <span>Previous Winners</span>
                     </div>
@@ -274,10 +274,10 @@
                                 </strong> {{ item.country }}
                             </div>
                             <div class="row">
-                                 {{ item.date }}
+                                 {{item.date}}
                             </div>
                         </div>
-                        <div class="box-footer">
+                        <div class="box-footer ">
                             <div class="box-left">
                                 <div class="box-users-likes">
                                     <ul class="list-users">
@@ -344,7 +344,7 @@
                                             </div>
                                         </li>
                                         <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
+                                            <div class="collection-tip" >
                                                 <div class="tip">
                                                     <div class="tip-msg">
                                                         Add to collections!
@@ -362,21 +362,58 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="box-right">
 
+                              <div class="box-right medal " >
+                                <ul class="list-users">
+                                  <li class="like">
+                                  <div class="collection-tip">
+                                      <div class="tip">
+                                          <div class="tip-msg">
+                                              Add to collections!
+                                          </div>
+                                      </div>
+                                      <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
+                                  </div>
+                                  <div class="">
+                                      <a href="javascript:;">
+                                          <i class="iconfont icon-medal"></i>
+                                      </a>
+                                  </div>
+                                  </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
+        </div>
+        <div class="box-heading no-flex">
+            <div class="grid one-row">
+                <div class="col-3 col-left-right">
+                    <div >
+                        <h2 class="title"><a href="/awards-of-the-day/">Nominees </a></h2>
+                        <span>We need your vote!</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="grid">
             <ul class="list-items ml35" id="example-2">
                 <li class="col-3 " v-for="item in items">
                     <div class="box-photo">
                         <img :src="item.img" alt="" class="narrow">
                         <div class="mask" style="display:none">
+                        </div>
+                        <div class="none">
+                          <div class="hover-item center">
+                              <a href="https://www.awwwards.com/sites/themads" class="bt-default white-fill vote-now">VOTE NOW</a>
+                          </div>
                           <i class="iconfont icon-fenxiang2"></i>
                         </div>
+
                     </div>
+                    <div class="ribbon ribbon-mobile-week" v-if="item.ribbon"></div>
                     <div class="box-info">
                         <div class="box-content">
                             <div class="row">
@@ -385,14 +422,14 @@
                             <div class="row">
                                 by
                                 <strong>
-                      <a href="/readymag/">{{ item.name }}</a>
-                    </strong> {{ item.country }}
+                                  <a href="/readymag/">{{ item.name }}</a>
+                                </strong> {{ item.country }}
                             </div>
                             <div class="row">
-                                 {{ item.date }}
+                                 {{item.date}}
                             </div>
                         </div>
-                        <div class="box-footer">
+                        <div class="box-footer ">
                             <div class="box-left">
                                 <div class="box-users-likes">
                                     <ul class="list-users">
@@ -459,7 +496,7 @@
                                             </div>
                                         </li>
                                         <li id="like" class="like">
-                                            <div class="collection-tip" id="wrapper">
+                                            <div class="collection-tip" >
                                                 <div class="tip">
                                                     <div class="tip-msg">
                                                         Add to collections!
@@ -477,38 +514,74 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="box-right">
 
+                              <div class="box-right medal " >
+                                <ul class="list-users">
+                                  <li class="like">
+                                  <div class="collection-tip">
+                                      <div class="tip">
+                                          <div class="tip-msg">
+                                              Add to collections!
+                                          </div>
+                                      </div>
+                                      <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
+                                  </div>
+                                  <div class="">
+                                      <a href="javascript:;">
+                                          <i class="iconfont icon-medal"></i>
+                                      </a>
+                                  </div>
+                                  </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
-
         </div>
+        <div class="loadmore">
+          Load More
+        </div>
+
     </div>
+    <footer id="footer">
+        <div class="inner">
+            <div class="box-top">
+                <div class="box-left">
+                    <h2 class="headline slogan not-mobile">The awards for design, creativity and innovation on the Internet</h2>
+                    <ul class="menu-footer">
+                        <li class="directory not-mobile"><a href="/directory/" data-count="3">Directory</a>  </li>
+                        <li class="count1 not-mobile" >
+                          3
+                        </li>
+                        <li class="jobs not-mobile"><a href="/jobs/" data-count="3">Jobs</a></li>
+                        <li class="count2 not-mobile" >
+                          4
+                        </li>
+                        <li><a href="/contact-us/">Contact Us</a></li>
+                        <li><a href="/cookies-policy/">Cookies Policy</a></li>
+                        <li><a href="/terms/">Legal Terms</a></li>
+                    </ul>
+                    <p>Private Cloud by <strong><a href="http://www.stackscale.com/" target="_blank" rel="noopener nofollow">Stackscale</a></strong></p>
+                    <ul class="list-social">
+                      <i class="iconfont icon-tuite"></i>
+                      <i class="iconfont icon-facebookf"></i>
+                    </ul>
+                </div>
+                <div class="box-right">
+                    <div class="headline">
+                        Next Conferences
+                        <i class="iconfont icon-rili"></i>
+                        <a href="https://conference.awwwards.com">Berlin</a> and <a href="https://conference.awwwards.com">San Francisco</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <script type="text/javascript">
     $(function() {
-        // //canvas画三角
-        // var bg = document.getElementsByClassName("triangle");
-        // var i;
-        // for (i = 0; i < bg.length; i++) {
-        //     var ctx = bg[i].getContext('2d');
-        //     console.log(i);
-        //     ctx.beginPath();
-        //     var height = 12 * Math.sin(Math.PI / 3); //计算等边三角形的高
-        //     ctx.moveTo(6, 0); //从A（100,0）开始
-        //     ctx.lineTo(0, height); //从A(100,0)开始，画到B (0,173)结束
-        //     ctx.lineTo(12, height); //B(0,173)-C(200,173)
-        //     if (i < 2) {
-        //         ctx.fillStyle = '#fff'; //以纯色绿色填充
-        //     } else {
-        //         ctx.fillStyle = '#49c5b6'; //以纯色绿色填充
-        //     }
-        //     ctx.fill(); //闭合形状并且以填充方式绘制出来
-        // }
         //Vue渲染模板，注意要放在前面！
         var example1 = new Vue({
           el: '#example-1',
@@ -570,6 +643,7 @@
                     country:" from U.S.A." ,
                     date:"January 10, 2018",
                     img:"./assets/images/project3.jpg",
+                    ribbon:true
                   },]
           }
         },)
@@ -641,14 +715,43 @@
         $(".box-photo").hover(function() {
           $(this).children("img").addClass("enlarge");
           $(this).children("img").removeClass("narrow");
-          console.log(1111);
-                $(this).children(".mask").show();
+          $(this).children(".mask").show();
+          $(this).children(".none").show();
             }, function() {
               $(this).children("img").addClass("narrow");
                 $(this).children("img").removeClass("enlarge");
                 $(this).children(".mask").hide();
+                $(this).children(".none").hide();
             })
 
+        //滚动侦测
+        //获取导航距离页面顶部的距离
+ var toTopHeight = $("#nav").offset().top;
+
+ //监听页面滚动
+ $(window).scroll(function() {
+     //判断页面滚动超过导航时执行的代码
+     if( $(document).scrollTop() > toTopHeight ){
+         //检测是否为IE6。jQuery1.9中去掉了msie的方法，所以只好这样写
+         if ('undefined' == typeof(document.body.style.maxHeight)) {
+             //页面滚动的距离
+             var scrollTop = $(document).scrollTop();
+             //IE6下，用absolute定位，并设置Top值为距离页面顶部的距离
+             $("#nav").css({'position':'absolute','top':scrollTop+'px'});
+         }else{
+             //IE6以上浏览器采用fixed定位
+             $("#nav").addClass("nav_fixed");
+         }
+     }else{//判断页面滚动没有超过导航时执行的代码
+         if ('undefined' == typeof(document.body.style.maxHeight)) {
+             //设置Top值为导航距页面顶部的初始值。（IE6为了防止浏览器一下滚动过多，所以不能采用直接去掉定位的方法）
+             $("#nav").css({'position':'absolute','top':toTopHeight+'px'});
+         }else{
+             //IE6以上浏览器移除fixed定位，采用默认流布局
+             $("#nav").removeClass("nav_fixed");
+         }
+     }
+ });
     })
 
 </script>
