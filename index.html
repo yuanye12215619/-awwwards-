@@ -12,11 +12,15 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--iconfnt-->
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_jd8wjg06m82maemi.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_1fwh7bufvc9jm7vi.css">
     <!--tip-plugin-->
     <script src="./assets/js/tip-plugin.js"></script>
     <!--vue-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+     <!--less cdn-->
+     <!-- <link rel="stylesheet/less" type="text/css" href="./assets/css/index.less">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script> -->
+
     <link rel="stylesheet" href="./assets/css/tip.css">
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="icon" href="./assets/images/square.png" type="image/x-icon" />
@@ -25,8 +29,8 @@
 
 <body>
     <!--header开始-->
-    <div class="container-fluid header"  >
-        <div class="row header-top" >
+    <header class="container-fluid ">
+        <div class="row header-top">
             <div class="col-xs-1 ">
                 <span class="menu-lang">ENGLISH</span>
             </div>
@@ -40,7 +44,36 @@
             <div class="col-xs-1">
                 <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> MENU
             </div>
-            <div class="col-xs-1 b-l1">
+            <div class="col-xs-11 p0 box-search">
+              <div  id="menu-btn" style="">
+                <div class="col-xs-1 b-l1 b-r1 p0 menu-btn" >
+                ALL ▾
+                </div>
+                <div class="menu-dropdown">
+                    <ul id="menu-list">
+                      <li v-for="item in items">
+                        <strong>
+                        <a class="js-filter-type" data-type="all" href="javascript:;">{{ item.message }}</a>
+                        </strong>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col-xs-9">
+                <input type="text" class="search" placeholder="SEARCH FOR INSPIRATION (HTML5, VR, RED, MINIMAL...)" name="" value="">
+              </div>
+              <div class="col-xs-2 p0">
+                <div class="col-xs-8 p0">
+                    <a href="javascript:;" class="show-filters">SHOW FILTERS</a>
+                </div>
+                <div class="col-xs-4 bt-close p0" id="close-search">
+                  <i class="iconfont icon-cuo"></i>
+                </div>
+              </div>
+
+            </div>
+            <div class="nav-title">
+            <div class="col-xs-1 b-l1 glass"  id="glass">
                 <div class="col-xs-5"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
             </div>
             <div class="col-xs-10 p0">
@@ -57,14 +90,16 @@
                 </div>
                 <div class="col-xs-2  p0">
                     <div class="col-xs-2"></div>
+                    <a href="javascript:;">
                     <div class="col-xs-10 button-large p0">
                         SUBMIT YOUR SITE!
                     </div>
+                    </a>
                 </div>
             </div>
-
+            </div>
         </div>
-    </div>
+    </header>
     <!--banner开始-->
     <div class="banner">
         <div class="banner-content">
@@ -105,9 +140,9 @@
                     <li class="circle-note-progress style-design" data-note="7.14">
                         <div class="circle">
                             <svg width="84" height="84">
-                        <circle r="38" cy="41" cx="41"></circle>
-                        <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-0 900ms ease forwards;"></circle>
-                    </svg>
+                                <circle r="38" cy="41" cx="41"></circle>
+                                <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-0 900ms ease forwards;"></circle>
+                            </svg>
                             <div class="percent">
                                 <span class="int">7</span><span class="dec">.14</span>
                             </div>
@@ -150,6 +185,18 @@
                         </div>
                         <div class="legend">CONTENT</div>
                     </li>
+                    <li class="circle-note-progress style-developer" data-note="7.14">
+                        <div class="circle">
+                            <svg width="84" height="84">
+                                <circle r="38" cy="41" cx="41"></circle>
+                                <circle r="38" cy="41" cx="41" stroke-linejoin="round" stroke-linecap="round" class="circle-progress" style="animation: donut-show-0 900ms ease forwards;"></circle>
+                            </svg>
+                            <div class="percent">
+                                <span class="int">7</span><span class="dec">.14</span>
+                            </div>
+                        </div>
+                        <div class="legend">DEVELOPER</div>
+                    </li>
                 </ul>
             </div>
             <div class="box-bl">
@@ -166,7 +213,7 @@
                     Jury Votes
                 </div>
                 <div class="item item-user">
-                    <div class="top-tip" style="display:none" >
+                    <div class="top-tip" style="display:none">
                         <div class="tip">
                             <div class="circle">
                                 <svg width="84" height="84">
@@ -239,7 +286,7 @@
         <div class="box-heading no-flex">
             <div class="grid one-row">
                 <div class="col-3 col-left-right">
-                    <div >
+                    <div>
                         <h2 class="title"><a href="/awards-of-the-day/">Sites of the day</a></h2>
                         <span>Previous Winners</span>
                     </div>
@@ -258,7 +305,7 @@
                         <img :src="item.img" alt="" class="narrow">
 
                         <div class="mask" style="display:none">
-                          <i class="iconfont icon-fenxiang2"></i>
+                            <i class="iconfont icon-fenxiang2"></i>
                         </div>
                     </div>
                     <div class="ribbon ribbon-mobile-week" v-if="item.ribbon"></div>
@@ -274,7 +321,7 @@
                                 </strong> {{ item.country }}
                             </div>
                             <div class="row">
-                                 {{item.date}}
+                                {{item.date}}
                             </div>
                         </div>
                         <div class="box-footer ">
@@ -283,7 +330,7 @@
                                     <ul class="list-users">
                                         <li class="list-user">
                                             <div class="item js-user">
-                                                <div class="top-tip" >
+                                                <div class="top-tip">
                                                     <div class="tip">
                                                         <div class="user-head">
                                                             <img src="./assets/images/thumb_default.jpg" alt="">
@@ -303,7 +350,7 @@
                                                 <a href="/tslasho/">
                                                     <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
                                                 </a>
-                                                <div class="bottom-tip" >
+                                                <div class="bottom-tip">
                                                     <i class="iconfont icon-sanjiao2"></i>
                                                     <div class="tip">
                                                         <div class="user-head">
@@ -344,7 +391,7 @@
                                             </div>
                                         </li>
                                         <li id="like" class="like">
-                                            <div class="collection-tip" >
+                                            <div class="collection-tip">
                                                 <div class="tip">
                                                     <div class="tip-msg">
                                                         Add to collections!
@@ -363,23 +410,23 @@
                                 </div>
                             </div>
 
-                              <div class="box-right medal " >
+                            <div class="box-right medal ">
                                 <ul class="list-users">
-                                  <li class="like">
-                                  <div class="collection-tip">
-                                      <div class="tip">
-                                          <div class="tip-msg">
-                                              Add to collections!
-                                          </div>
-                                      </div>
-                                      <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                  </div>
-                                  <div class="">
-                                      <a href="javascript:;">
-                                          <i class="iconfont icon-medal"></i>
-                                      </a>
-                                  </div>
-                                  </li>
+                                    <li class="like">
+                                        <div class="collection-tip">
+                                            <div class="tip">
+                                                <div class="tip-msg">
+                                                    Add to collections!
+                                                </div>
+                                            </div>
+                                            <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
+                                        </div>
+                                        <div class="">
+                                            <a href="javascript:;">
+                                                <i class="iconfont icon-medal"></i>
+                                            </a>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -390,7 +437,7 @@
         <div class="box-heading no-flex">
             <div class="grid one-row">
                 <div class="col-3 col-left-right">
-                    <div >
+                    <div>
                         <h2 class="title"><a href="/awards-of-the-day/">Nominees </a></h2>
                         <span>We need your vote!</span>
                     </div>
@@ -406,10 +453,10 @@
                         <div class="mask" style="display:none">
                         </div>
                         <div class="none">
-                          <div class="hover-item center">
-                              <a href="https://www.awwwards.com/sites/themads" class="bt-default white-fill vote-now">VOTE NOW</a>
-                          </div>
-                          <i class="iconfont icon-fenxiang2"></i>
+                            <div class="hover-item center">
+                                <a href="https://www.awwwards.com/sites/themads" class="bt-default white-fill vote-now">VOTE NOW</a>
+                            </div>
+                            <i class="iconfont icon-fenxiang2"></i>
                         </div>
 
                     </div>
@@ -426,7 +473,7 @@
                                 </strong> {{ item.country }}
                             </div>
                             <div class="row">
-                                 {{item.date}}
+                                {{item.date}}
                             </div>
                         </div>
                         <div class="box-footer ">
@@ -435,7 +482,7 @@
                                     <ul class="list-users">
                                         <li class="list-user">
                                             <div class="item js-user">
-                                                <div class="top-tip" >
+                                                <div class="top-tip">
                                                     <div class="tip">
                                                         <div class="user-head">
                                                             <img src="./assets/images/thumb_default.jpg" alt="">
@@ -455,7 +502,7 @@
                                                 <a href="/tslasho/">
                                                     <img src="./assets/images/thumb_default.jpg" width="27" height="27" alt="t/o" class="lazy lazy-loaded">
                                                 </a>
-                                                <div class="bottom-tip" >
+                                                <div class="bottom-tip">
                                                     <i class="iconfont icon-sanjiao2"></i>
                                                     <div class="tip">
                                                         <div class="user-head">
@@ -496,7 +543,7 @@
                                             </div>
                                         </li>
                                         <li id="like" class="like">
-                                            <div class="collection-tip" >
+                                            <div class="collection-tip">
                                                 <div class="tip">
                                                     <div class="tip-msg">
                                                         Add to collections!
@@ -515,23 +562,23 @@
                                 </div>
                             </div>
 
-                              <div class="box-right medal " >
+                            <div class="box-right medal ">
                                 <ul class="list-users">
-                                  <li class="like">
-                                  <div class="collection-tip">
-                                      <div class="tip">
-                                          <div class="tip-msg">
-                                              Add to collections!
-                                          </div>
-                                      </div>
-                                      <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
-                                  </div>
-                                  <div class="">
-                                      <a href="javascript:;">
-                                          <i class="iconfont icon-medal"></i>
-                                      </a>
-                                  </div>
-                                  </li>
+                                    <li class="like">
+                                        <div class="collection-tip">
+                                            <div class="tip">
+                                                <div class="tip-msg">
+                                                    Add to collections!
+                                                </div>
+                                            </div>
+                                            <i class="iconfont icon-sanjiao1 " style="font-size:20px;color:#49c5b6;"></i>
+                                        </div>
+                                        <div class="">
+                                            <a href="javascript:;">
+                                                <i class="iconfont icon-medal"></i>
+                                            </a>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -540,7 +587,7 @@
             </ul>
         </div>
         <div class="loadmore">
-          Load More
+            Load More
         </div>
 
     </div>
@@ -550,13 +597,13 @@
                 <div class="box-left">
                     <h2 class="headline slogan not-mobile">The awards for design, creativity and innovation on the Internet</h2>
                     <ul class="menu-footer">
-                        <li class="directory not-mobile"><a href="/directory/" data-count="3">Directory</a>  </li>
-                        <li class="count1 not-mobile" >
-                          3
+                        <li class="directory not-mobile"><a href="/directory/" data-count="3">Directory</a> </li>
+                        <li class="count1 not-mobile">
+                            3
                         </li>
                         <li class="jobs not-mobile"><a href="/jobs/" data-count="3">Jobs</a></li>
-                        <li class="count2 not-mobile" >
-                          4
+                        <li class="count2 not-mobile">
+                            4
                         </li>
                         <li><a href="/contact-us/">Contact Us</a></li>
                         <li><a href="/cookies-policy/">Cookies Policy</a></li>
@@ -564,8 +611,8 @@
                     </ul>
                     <p>Private Cloud by <strong><a href="http://www.stackscale.com/" target="_blank" rel="noopener nofollow">Stackscale</a></strong></p>
                     <ul class="list-social">
-                      <i class="iconfont icon-tuite"></i>
-                      <i class="iconfont icon-facebookf"></i>
+                        <i class="iconfont icon-tuite"></i>
+                        <i class="iconfont icon-facebookf"></i>
                     </ul>
                 </div>
                 <div class="box-right">
@@ -580,180 +627,6 @@
     </footer>
 </body>
 
-<script type="text/javascript">
-    $(function() {
-        //Vue渲染模板，注意要放在前面！
-        var example1 = new Vue({
-          el: '#example-1',
-          data: {
-            items: [{
-              message: 'Dieter Rams:  10 Principles for  Good Design',
-              name: 'ReadyMag',
-              country:" from U.S.A." ,
-              date:"January 10, 2018",
-              img:"./assets/images/project.jpg",
-            },
-              {
-                message: 'Dieter Rams:  10 Principles for  Good Design',
-                name: 'ReadyMag',
-                country:" from U.S.A." ,
-                date:"January 10, 2018",
-                img:"./assets/images/project4.png",
-              },{
-                  message: 'Dieter Rams:  10 Principles for  Good Design',
-                  name: 'ReadyMag',
-                  country:" from U.S.A." ,
-                  date:"January 10, 2018",
-                  img:"./assets/images/project2.jpg",
-                },{
-                    message: 'Dieter Rams:  10 Principles for  Good Design',
-                    name: 'ReadyMag',
-                    country:" from U.S.A." ,
-                    date:"January 10, 2018",
-                    img:"./assets/images/project3.jpg",
-                    ribbon:true
-                  },]
-          }
-        },)
-        var example2 = new Vue({
-          el: '#example-2',
-          data: {
-            items: [{
-              message: 'Dieter Rams:  10 Principles for  Good Design',
-              name: 'ReadyMag',
-              country:" from U.S.A." ,
-              date:"January 10, 2018",
-              img:"./assets/images/project.jpg",
-            },
-              {
-                message: 'Dieter Rams:  10 Principles for  Good Design',
-                name: 'ReadyMag',
-                country:" from U.S.A." ,
-                date:"January 10, 2018",
-                img:"./assets/images/project4.png",
-              },{
-                  message: 'Dieter Rams:  10 Principles for  Good Design',
-                  name: 'ReadyMag',
-                  country:" from U.S.A." ,
-                  date:"January 10, 2018",
-                  img:"./assets/images/project2.jpg",
-                },{
-                    message: 'Dieter Rams:  10 Principles for  Good Design',
-                    name: 'ReadyMag',
-                    country:" from U.S.A." ,
-                    date:"January 10, 2018",
-                    img:"./assets/images/project3.jpg",
-                    ribbon:true
-                  },]
-          }
-        },)
-        //分享功能
-        $("#share").bind("click", function() {
-
-                $(".share-list").toggleClass("active");
-            })
-            //banner-tip
-        $(".item-user").hover(function() {
-            var a = $(".item-user").offset().top + 45 - $(document).scrollTop() //距离窗口可视区域顶部
-            var b = $(window).height(); //可视区域窗口的高度
-            var c = b - a; //底部
-            if (c > 230) {
-                $(this).children(".bottom-tip").show();
-            } else {
-                if (a > 230) {
-                    $(this).children(".top-tip").show();
-                }
-            }
-        }, function() {
-            $(this).children(".bottom-tip,.top-tip").hide();
-        });
-        //collection改变颜色
-        $(".like-heart a").hover(function() {
-            $(this).children(".icon-heart").css("color", "#49c5b6");
-            $(this).children(".number").css("color", "#49c5b6");
-        }, function() {
-            $(this).children(".icon-heart").css("color", "#BDC1C0");
-            $(this).children(".number").css("color", "#BDC1C0");
-        });
-
-        //collection-tip
-        $(".like").hover(function() {
-                $(this).children(".collection-tip").show();
-            }, function() {
-                $(this).children(".collection-tip").hide();
-            })
-        //borders
-        $(".borders").hover(function() {
-                $(".icon-ganlanzhi").css("color", "#49c5b6");
-            }, function() {
-              $(".icon-ganlanzhi").css("color", "#BDC1C0");
-            })
-        //user-tip
-        $(".js-user").hover(function(){
-          var a=$(".js-user").offset().top+45-$(document).scrollTop()//距离窗口可视区域顶部
-          var b=$(window).height() ;//可视区域窗口的高度
-          var c=b-a;//底部
-          if(c>230){
-            $(this).children(".bottom-tip").show();
-          }else{
-            if(a>230){
-              $(this).children(".top-tip").show();
-            }
-          }
-        },function(){
-            $(this).children(".bottom-tip,.top-tip").hide();
-        });
-            //tip插件
-        $(".item-user").bind("click", function() {
-            $(this).children(".none").show();
-            $('#myDiv').tip({
-                background: '#fff'
-                    // circlecolor:"#ccc";
-            });
-        })
-        //photo mask
-        $(".box-photo").hover(function() {
-          $(this).children("img").addClass("enlarge");
-          $(this).children("img").removeClass("narrow");
-          $(this).children(".mask").show();
-          $(this).children(".none").show();
-            }, function() {
-              $(this).children("img").addClass("narrow");
-                $(this).children("img").removeClass("enlarge");
-                $(this).children(".mask").hide();
-                $(this).children(".none").hide();
-            })
-
-        //滚动侦测
-        //获取导航距离页面顶部的距离
- var toTopHeight = $("#nav").offset().top;
-
- //监听页面滚动
- $(window).scroll(function() {
-     //判断页面滚动超过导航时执行的代码
-     if( $(document).scrollTop() > toTopHeight ){
-         //检测是否为IE6。jQuery1.9中去掉了msie的方法，所以只好这样写
-         if ('undefined' == typeof(document.body.style.maxHeight)) {
-             //页面滚动的距离
-             var scrollTop = $(document).scrollTop();
-             //IE6下，用absolute定位，并设置Top值为距离页面顶部的距离
-             $("#nav").css({'position':'absolute','top':scrollTop+'px'});
-         }else{
-             //IE6以上浏览器采用fixed定位
-             $("#nav").addClass("nav_fixed");
-         }
-     }else{//判断页面滚动没有超过导航时执行的代码
-         if ('undefined' == typeof(document.body.style.maxHeight)) {
-             //设置Top值为导航距页面顶部的初始值。（IE6为了防止浏览器一下滚动过多，所以不能采用直接去掉定位的方法）
-             $("#nav").css({'position':'absolute','top':toTopHeight+'px'});
-         }else{
-             //IE6以上浏览器移除fixed定位，采用默认流布局
-             $("#nav").removeClass("nav_fixed");
-         }
-     }
- });
-    })
-
-</script>
+<script  src="./assets/js/index.js"></script>
 
 </html>
