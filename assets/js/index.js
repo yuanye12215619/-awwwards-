@@ -193,7 +193,6 @@ $(function() {
 
     //jq1.9以上 替代toggle 隐藏显示下拉菜单
     $('#menu-btn').click(function(){
-      console.log(111);
         if($(this).find(".style2").length){
             $(".menu-dropdown").removeClass("style2");
         }else{
@@ -212,5 +211,22 @@ $(function() {
     $("#glass").bind("click",function(){
         $(".nav-title").hide();
         $(".box-search").show();
+    })
+    //显示语言栏
+    $(".menu-lang").bind("click",function(){
+      if($("html").find(".nav-sidebar-open").length){
+          $("body").removeClass("nav-sidebar-open");
+          console.log(222);
+      }else{
+        console.log(111);
+        $("body").addClass("nav-sidebar-open");
+      }
+    })
+    $(".js-close-menu").bind("click",function(){
+      $("body").removeClass("nav-sidebar-open");
+    })
+    $(".nav-main").find(".item").bind("mouseover",function(){
+      $(this).children(".soon").css("opacity","1");
+    $(".item").not($(this)).children(".soon").css("opacity","0");
     })
 })

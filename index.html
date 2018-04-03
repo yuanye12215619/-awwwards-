@@ -12,7 +12,7 @@
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!--iconfnt-->
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_1fwh7bufvc9jm7vi.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_507319_tpm2cijmz3t0529.css">
     <!--tip-plugin-->
     <script src="./assets/js/tip-plugin.js"></script>
     <!--vue-->
@@ -28,6 +28,65 @@
 </head>
 
 <body>
+  <!--左侧导航-->
+  <nav class="nav-main" id="nav-main">
+    <div class="top">
+        <div class="header">
+            <div class="pull-left">
+                <span class="link-1 js-nav-menu" data-menu-id="menu-main">BACK</span>
+            </div>
+            <div class="pull-right">
+                <div class="bt-close js-close-menu">CLOSE<i class="iconfont icon-cuo"></i></div>
+
+            </div>
+        </div>
+        <ul class="menu" data-menu-name="ENGLISH" data-menu-id="menu-lang" id="menu-main">
+            <li><span class="item open_login">Register / Login</span></li>
+            <li class="active"><a href="/" class="item">Home</a></li>
+            <li><a href="/websites/" class="item">Winners</a></li>
+            <li><a href="/nominees/" class="item">Nominees</a></li>
+            <li><a href="/collections/" class="item">Collections</a></li>
+            <li class="directory"><a href="/directory/" class="item" data-count="2">Professional directory</a></li>
+            <li class="jobs"><a href="/jobs/" class="item" data-count="4">Jobs &amp; Talent</a></li>
+            <li><a href="/blog/" class="item">Magazine</a></li>
+            <li><a href="/books/" class="item">eBooks &amp; Publications</a></li>
+            <li><a href="/about-us/" class="item">About Us</a></li>
+            <li>
+                <a href="/conferences" class="item-photo">
+                    Conferences 2018                    <i class="first-top">Berlin / 7-9 February</i>
+                    <i>San Francisco / 10-11 May</i>
+                </a>
+            </li>
+        </ul>
+        <ul class="menu active" data-menu-name="BACK" data-menu-id="menu-main" id="menu-lang">
+                <li>
+                    <a href="#">
+                        English<span class="bt-check active">
+                            <i class="iconfont icon-dui"></i>
+                        </span>
+                    </a>
+                </li>                                                                                                                                      <li><span class="item">Español - Spanish <span class="soon">Soon!</span></span></li>
+            <li><span class="item">Português - Portuguese <span class="soon">Soon!</span></span></li>
+            <li><span class="item">Français - French <span class="soon">Soon!</span></span></li>
+            <li><span class="item">日本の - Japanese <span class="soon">Soon!</span></span></li>
+            <li><span class="item">中國 - Chinese <span class="soon">Soon!</span></span></li>
+        </ul>
+    </div>
+    <div class="box-bottom">
+        <div class="box-version">
+            <span class="box-version-text">Activate black option</span>
+            <div class="input-check-toggle check-small ">
+                <input id="version-color" type="checkbox" class="js-dark">
+                <label for="version-color">
+                    <div class="ball"></div>
+                </label>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="wrapper">
+
+
     <!--header开始-->
     <header class="container-fluid ">
         <div class="row header-top">
@@ -625,6 +684,7 @@
             </div>
         </div>
     </footer>
+</div>
 </body>
 
 <script  src="./assets/js/index.js"></script>

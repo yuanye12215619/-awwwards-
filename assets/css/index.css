@@ -35,6 +35,9 @@ table {
 a{
   color:#202121;
 }
+label{
+  margin-bottom: 0;
+}
 fieldset,
 img {
     border: 0;
@@ -99,6 +102,218 @@ strong {
 .b-b1{
   border-bottom: 1px solid #E6EAEA;
 }
+/*具体样式开始*/
+
+.nav-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    background: #f4f7f6;
+    overflow-y: auto;
+    z-index: 301;
+    -webkit-transform: translateX(-320px);
+    transform: translateX(-320px);
+}
+.nav-sidebar-open .nav-main{
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.nav-sidebar-open .wrapper {
+    position: fixed;
+    -webkit-transform: translateX(320px);
+    transform: translateX(320px);
+}
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    background: #f4f7f6;
+    z-index: 2;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+.wrapper:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 400;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.nav-sidebar-open .wrapper:before {
+    opacity: 1;
+    visibility: visible;
+}
+.nav-main .header {
+    height: 70px;
+    padding: 0 30px;
+    line-height: 70px;
+    font-size: 13px;
+    font-weight: normal;
+    background-color: #f4f7f6;
+    border-bottom: 1px solid #E6EAEA;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.nav-main .menu.active {
+    display: block;
+}
+.pull-left {
+    float: left;
+}
+.link-1 {
+    display: inline-block;
+    color: #202121 !important;
+    border-bottom: 1px solid rgba(32,33,33,0.5);
+    line-height: normal;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.pull-right {
+    float: right;
+}
+.nav-main .bt-close {
+    cursor: pointer;
+
+    color: #202121;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.nav-main .bt-close .icon-cuo{
+      color: #202121;
+      padding-left: 15px;
+}
+.nav-main .menu {
+    display: none;
+}
+.nav-main .menu .item, .nav-main .menu a {
+    position: relative;
+    display: block;
+    padding: 24px 36px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #202121;
+    cursor: pointer;
+    background: #f4f7f6;
+    border-bottom: 1px solid #E6EAEA;
+    -webkit-transition: background 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+ .nav-main .menu a:hover{
+  background-color: #fff;
+}
+.nav-main .menu .item:hover{
+ background-color: #fff;
+}
+.nav-main .menu .item .soon, .nav-main .menu a .soon {
+    opacity: 0;
+    padding-left: 10px;
+    font-weight: 300px;
+    color: #49c5b6;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.nav-main .box-bottom {
+    padding: 30px 25px 30px 36px;
+    width: 100%;
+}
+.nav-main .box-bottom .box-version {
+    line-height: 30px;
+    font-size: 16px;
+    color: #A6ABAB;
+    font-weight: 400;
+}
+.nav-main .box-bottom .box-version .input-check-toggle {
+    top: 4px;
+    float: right;
+}
+
+.input-check-toggle.check-small {
+    width: 46px;
+    height: 25px;
+}
+
+.input-check-toggle {
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.input-check-toggle label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #707070;
+    border-radius: 30px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.input-check-toggle.check-small .ball {
+    width: 23px;
+    height: 23px;
+    -webkit-transform: translateX(22px);
+    transform: translateX(22px);
+}
+
+.input-check-toggle .ball {
+    position: relative;
+    top: 1px;
+    width: 28px;
+    height: 28px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-transform: translateX(41px);
+    transform: translateX(41px);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.nav-main .menu a .bt-check {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+}
+
+.bt-check.active .icon-dui{
+  color: #49c5b6;
+  font-size: 32px;
+}
+
+
 /*小于1024不显示header-top*/
 @media only screen and (max-width: 1024px) {
   .header-top{
