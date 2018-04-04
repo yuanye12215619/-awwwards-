@@ -192,7 +192,7 @@ $(function() {
     });
 
     //jq1.9以上 替代toggle 隐藏显示下拉菜单
-    $('#menu-btn').click(function(){
+    $('#type-menu-btn').click(function(){
         if($(this).find(".style2").length){
             $(".menu-dropdown").removeClass("style2");
         }else{
@@ -200,7 +200,7 @@ $(function() {
         }
     });
     $('#menu-list li').bind('click',function(){
-      $(".menu-btn").text($(this).text()+' ▾');
+      $(".type-menu-btn").text($(this).text()+' ▾');
     })
     //关闭搜索框
     $("#close-search").bind("click",function(){
@@ -212,21 +212,36 @@ $(function() {
         $(".nav-title").hide();
         $(".box-search").show();
     })
+
+
     //显示语言栏
-    $(".menu-lang").bind("click",function(){
-      if($("html").find(".nav-sidebar-open").length){
-          $("body").removeClass("nav-sidebar-open");
-          console.log(222);
-      }else{
-        console.log(111);
+    $(".menu-lang").bind("click",function(event){
+        event.stopPropagation();//不会找父元素绑定的事件
         $("body").addClass("nav-sidebar-open");
-      }
+        $("#menu-main").removeClass("active");
+        $("#menu-lang").addClass("active");
+
     })
+    //显示主菜单
+    $(".menu-btn").bind("click",function(){
+      event.stopPropagation();//不会找父元素绑定的事件
+        $("body").addClass("nav-sidebar-open");
+        $("#menu-main").addClass("active");
+        $("#menu-lang").removeClass("active");
+    })
+    //叉号关掉主菜单或语言栏
     $(".js-close-menu").bind("click",function(){
       $("body").removeClass("nav-sidebar-open");
     })
+    //点遮罩关闭主菜单或语言栏
+    $(".wrapper").bind("click",function(){
+      $("body").removeClass("nav-sidebar-open");
+    })
+    //菜单覆盖特效
     $(".nav-main").find(".item").bind("mouseover",function(){
       $(this).children(".soon").css("opacity","1");
     $(".item").not($(this)).children(".soon").css("opacity","0");
     })
+
+
 })

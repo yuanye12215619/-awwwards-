@@ -126,6 +126,10 @@ strong {
     z-index: 301;
     -webkit-transform: translateX(-320px);
     transform: translateX(-320px);
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 .nav-sidebar-open .nav-main{
   -webkit-transform: translateX(0);
@@ -225,6 +229,14 @@ strong {
     border-bottom: 1px solid #E6EAEA;
     -webkit-transition: background 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
     transition: background 0.3s ease-in-out, border 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.nav-main .menu .item i, .nav-main .menu a i {
+    display: block;
+    padding-top: 5px;
+    font-weight: 400;
+    color: #A6ABAB;
+    font-style: normal;
+    font-size: 16px;
 }
  .nav-main .menu a:hover{
   background-color: #fff;
@@ -392,7 +404,9 @@ strong {
     text-align: center;
     border-bottom: 1px solid #E6EAEA;
 }
-
+.menu-btn{
+  cursor: pointer;
+}
 .button-large {
     background-color: #49c5b6;
     color: #fff;
@@ -465,8 +479,7 @@ transition: width 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.menu-btn{
-  z-index: 999;
+.type-menu-btn{
   position: relative;
   top: 0;
   left: 0;
@@ -474,7 +487,7 @@ transition: width 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.menu-btn:hover{
+.type-menu-btn:hover{
   background-color:#fff;
 }
 .menu-dropdown{
@@ -491,6 +504,7 @@ transition: width 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .menu-dropdown.style2{
+      z-index: 99;
   top: 100%;
   display: block;
   opacity:1
@@ -506,9 +520,34 @@ transition: width 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+.nav-main .menu li.active .item {
+    color: #49c5b6;
+}
 
+.nav-main .count1 {
+  font-weight: 400;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  background-color: #FEF7CE;
+  margin-left: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
 
+.nav-main .count2 {
+    font-weight: 400;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    background-color: #BCF7E3;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 50%;
 
+}
 
 
 
