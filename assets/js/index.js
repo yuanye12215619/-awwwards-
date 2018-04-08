@@ -242,8 +242,11 @@ $(function() {
       $(this).children(".soon").css("opacity","1");
     $(".item").not($(this)).children(".soon").css("opacity","0");
     })
-    $(".input-check-toggle").bind("click",function(){
-      $("body").addClass("style-dark");
+    //按钮
+    $(".js-dark").bind("click",function(){
+      event.stopPropagation();
+      console.log(111);
+      $("body").toggleClass("style-dark");
     })
 
 })
